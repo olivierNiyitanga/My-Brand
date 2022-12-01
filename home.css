@@ -5,6 +5,9 @@
     list-style: none;
     box-sizing: border-box;
 }
+table{
+    border: 0px;
+}
 body{
     font-family: montserrat;
     background: #103440;
@@ -19,8 +22,8 @@ nav{
 label.brand{
 font-weight: bold;
 font-size: 22px;
-padding: 0 100px;
-line-height: 65px;
+margin-top: -2cm;
+margin-left: 2cm;
 display: inline;
 }
 nav ul{
@@ -58,14 +61,14 @@ nav ul li a{
     color: white;
 }
 input[type=button]{
-    height:86px;
-    width:202px;
+    height:70px;
+    width:150px;
     border-radius:34.4px;
     background-color: white;
 }
 input[type=button]:hover{
     height:50px;
-    width:202px;
+    width:150px;
     background-color:green;
 }
 .board{
@@ -96,7 +99,7 @@ input[type=button]:hover{
 }
 #skills{
     display: flex;
-    margin-top: 50px;
+    margin-top: -50px;
 }
 #skills div{
     align-items: center;
@@ -107,6 +110,15 @@ input[type=button]:hover{
     font-weight: bold;
 }
 #pra1{
+    background-color: #D9D9D9;
+    height: 82px;
+    width: 182px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid grey;
+    margin-left: -50px;
+}
+#pra2{
     background-color: #D9D9D9;
     height: 82px;
     width: 182px;
@@ -135,26 +147,59 @@ margin-top: -12cm;
 }
 .progress{
     height: 10px;
-    width:100%;
+    width:13cm;
     background-color: white;
     border-radius: 10px;
     position: relative;
     font-size: 3px;
 }
-.progress .progre span{
+span{
     font-size: 14px;
     color: white;
     font-weight: bold;
-    position: absolute;
+    margin-top: -20px;
+    margin-left: 5cm;
 }
-.progress .progre{
+.progress #progre{
     height: 10px;
-    width: 0%;
-    opacity:0;
+    width: 90%;
     border-radius: 10px;
     background-color:#14E81D;
-    transition: all .1s;
+}
+.progress #progr{
+    height: 10px;
+    width: 80%;
+    border-radius: 10px;
+    background-color:#14E81D;
+}
+.progress #prog{
+    height: 10px;
+    width: 75%;
+    border-radius: 10px;
+    background-color:#14E81D;
+}
+.progress #pro{
+    height: 10px;
+    width: 70%;
+    border-radius: 10px;
+    background-color:#14E81D;
 }
 #lang{
     color: white;
+}
+#map{
+    margin-top: 4cm;
+    margin-left: 4cm;
+}
+input[type=text]{
+    height:50px;
+    width:294px;
+    border-radius:34.4px;
+    background-color: white;
+    text-align: center;
+}
+.mess{
+    height:170px;
+    width:660px;
+    background-color: white;
 }

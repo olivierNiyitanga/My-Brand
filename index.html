@@ -8,16 +8,17 @@
     <link rel="stylesheet" type="text/css" href="home.css">
 </head>
 <body>
+    
         <nav>
-   <label class="brand">K.Festo</label>
+   <label class="brand"><img src="picture/pall.webp" style="height: 60px;width:60px;"></label>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Protfolio</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#" class="sign">Sign-In</a></li>
+                    <li><a href="#skills" id="skillTab">Skills</a></li>
+                    <li><a href="#protfolio">Protfolio</a></li>
+                    <li><a href="login.html">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="login.html" class="sign">Sign-In</a></li>
                 </ul>
         </nav>  
         <br>
@@ -31,13 +32,19 @@
                 <br><br>
                     <input type="button" value="HIRE ME">
                     <input type="button" value="LEARN MORE"></div>
-<div><img src="f.jpg" style="height:670px; width:445px;margin-top: -3cm;"></div>
+        <div>     
+         <img src="picture/f.jpg" style="height:670px; width:445px;margin-top: -3cm;">
+        </div>
         </div><div class="copyRight"><br><p>“Coding is My Passion!!!”</p>
             <p>“Means with coding ,I can do whatever you want :Just DM me”</p>
         </div><br><br>
         <div id="about">
-            <div><img src="about.webp" style="height:445px; width:576px;margin-top:1.5cm;"></div>
-            <h2 id="pra1"><br>About</h2>&nbsp;&nbsp;&nbsp;<h2 class="skillPra"><br><p>SKILLS&nbsp;&nbsp;&nbsp;EXPERIENCE</p>
+            <div>
+                <img src="picture/about.webp" style="height:445px; width:576px;margin-top:1.5cm;">
+            </div>
+            <h2 id="pra1"><br>About</h2>&nbsp;&nbsp;&nbsp;
+            <h2 class="skillPra"><br>
+                <p>SKILLS&nbsp;&nbsp;&nbsp;EXPERIENCE</p>
                 <br><br><br><br>
                 <p><b>My Story</b></p>
             </h2>
@@ -52,26 +59,103 @@
         </div>
         <br><br>
         <div id="skills">
-            <div><img src="about.webp" style="height:445px; width:576px;margin-top:1.5cm;"></div>
-            <h2 id="pra1"><br>SKILLS</h2>&nbsp;&nbsp;&nbsp;<h2 class="skillPra"><br><p>About&nbsp;&nbsp;&nbsp;EXPERIENCE</p>
+            <div>
+                <img src="picture/about.webp" style="height:445px; width:576px;margin-top:1.5cm;">
+            </div>
+            <h2 id="pra2"><br>SKILLS</h2>&nbsp;&nbsp;&nbsp;
+            <h2 class="skillPra"><br>
+                <p>About&nbsp;&nbsp;&nbsp;EXPERIENCE</p>
                 <br><br><br><br>
                 <p><b>My Story</b></p>
             </h2>
-        </div><div id="progressing"><script src="progresse.js"></script>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>HTML</b></p><div class="progress"><div class="progre" data-progress="90"><span>90%</span></div></div><br>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>CSS</b></p><div class="progress"><div class="progre" data-progress="80"><span>80%</span></div></div><br>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>PHP</b></p><div class="progress"><div class="progre" data-progress="75"><span>75%</span></div></div><br>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>JAVASCRIPT</b></p><div class="progress"><div class="progre" data-progress="70"><span>70%</span></div></div>
+        </div><div id="progressing">
+        <p><b><span>HTML 90%</span></b></p>
+        <div class="progress"><div id="progre" data-progress="90"></div>
+        </div><br>
+        <p><b><span>CSS 80%</span></b></p>
+        <div class="progress"><div id="progr" data-progress="80"></div>
+        </div><br>
+        <p><b><span>PHP 75%</span></b></p>
+        <div class="progress"><div id="prog" data-progress="75"></div>
+        </div><br>
+        <p><b><span>JAVASCRIPT 70%</span></b></p>
+        <div class="progress"><div id="pro" data-progress="70"></div>
+        </div>
     </div>
+    <!-- <script>
+            let btn=document.querySelector('showHide');
+            let dib=document.querySelector('skills');
+            btn.addEventListener('click',()=>{
+                if(dib.style.display==='none'){
+                    dib.style.display='block';
+                }
+                else{
+                    dib.style.display='none';
+                }
+            })
+    </script> -->
+    <br><br>
+    <div id="protfolio">
+        <h2 style="color: #103440;height:65px;width:328px;background-color: white;margin-top: 7cm;margin-left: 14cm;text-align: center;">
+            <p>PORTFOLIO</p>
+        </h2>
+        <h2 style="color: white;margin-top: 1cm;margin-left: 16cm;">
+            <p>My Latest Work</p>
+        </h2>
+        <br><br><br>
+        <div>
+            <img src="picture/graphic.jpg" style="height:375px;width:550px;margin-left: 2.5cm;"><img src="picture/graphic.jpg" style="height:375px;width:550px;margin-left: 2.5cm;">
+        </div>
+        <div>
+            <img src="picture/graphic.jpg" style="height:375px;width:550px;margin-left: 2.5cm;"><img src="picture/graphic.jpg" style="height:375px;width:550px;margin-left: 2.5cm;">
+        </div>
+    </div>
+    <br><br>
+    <div id="contact">
+        <div style="">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.
+            475876521125!2d30.13236427448751!3d-1.9634367367401153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+            1!3m3!1m2!1s0x19dca796f9417ad5%3A0x45ebba72296bfee2!2sKigali%20International%20Airport!5e0!3m2!1sen!2srw!4v1669454532247!5m2!1sen!2srw" 
+            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" id="map">
+        </iframe>
+        <h3 style="text-align:center;color:white;margin-left:16cm;margin-top:-10cm;">
+            <p><b>CONTACT</b></p>
+            <br>
+            <p>we are open for any suggetion and also you can chat with me</p>
+            <br><br><br>
+            <p><b>MY ADDRESS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY EMAIL:
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY CONTACT:</b></p>
+                <br>
+        <p>KIGALI,RWANDA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kabanofesto1@gmail.com
+        &nbsp;&nbsp;&nbsp;&nbsp;+250785206973</p><br><p><input type="text" name="fname" placeholder="Name">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name="email"placeholder="Email"></p>
+        <br>
+        <p><input type="" name="message"placeholder="Write your massage here!!!" class="mess"></p>
         <br><br>
+        <p>Follow me to the social Media:</p>
+        <p><img src="picture/Instagram.webp" style="height:60px;width:60px;">&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="picture/facebook.png" style="height:60px;width:60px;">&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="picture/twiter.jpg"style="height:60px;width:60px;"></p>
+        </h3></div><br><br>
+        <div><h3 style="color: white;text-align: center;font-weight: bold;"><p>Our blog</p>
+            <p>Recent From Blog</p></h3></div>
+    </div>
+    <br><div id="display"><!--display user data-->
+    </div></form><script src="/article.js"></script>
         <div class="board"><div><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>K.Festo</b></p><br><br>
             <p>Working hard and follow your passion I suear you’ll</p>
         <p>not regret for what you have been work.</p></div><div><p>&nbsp;&nbsp;&nbsp;<b>Services</b></p><p>Web Design</p>
             <p>Web Development</p>
             <p> Design</p>
             <p>UI/UX Design</p><br><p>&nbsp;&nbsp;<b>Copy Right©2022 KABANO Festo</b></p></div>
-            <div><p>&nbsp;&nbsp;&nbsp;<b>Have a Question</b></p><p><img src="address.png" style="height:27px; width:27px;">&nbsp;&nbsp;&nbsp;KIGALI,Rwanda</p>
-            <p><img src="contact.png" style="height:27px; width:27px;">&nbsp;&nbsp;&nbsp;+0785206973</p>
-            <p><img src="email.png" style="height:27px; width:27px;">&nbsp;&nbsp;&nbsp;kabanofesto@gmail.com</p></div></div> 
+            <div><p>&nbsp;&nbsp;&nbsp;<b>Have a Question</b></p>
+                <p><img src="picture/address.png" style="height:27px; width:27px;">&nbsp;&nbsp;&nbsp;KIGALI,Rwanda</p>
+            <p><img src="picture/contact.png" style="height:27px; width:27px;">&nbsp;&nbsp;&nbsp;+0785206973</p>
+            <p><img src="picture/email.png" style="height:27px; width:27px;">&nbsp;&nbsp;&nbsp;kabanofesto@gmail.com</p>
+        </div>
+    </div> 
 </body>
 </html>
