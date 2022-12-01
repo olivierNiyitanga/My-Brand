@@ -38,7 +38,7 @@ if(name==null){
 }
 else if(flname==data.flname && pwd==data.pwd)
 {
-    window.location.href="admin.html";
+    window.location.href="dashBoard.html";
 }
 else{
     result.innerHTML="wrong password";
