@@ -50,9 +50,11 @@ div ul li{
     font-size: 22px;
 }
 div ul li a.sign{
-background-color: #14AE5C;
-height: 50px;
-width: 171.27px;
+    background-color:#103440;
+    height: 50px;
+    width: 171.27px;
+    font-weight: bold;
+    color: white;
 }
 div ul li a{
     color: black;

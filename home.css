@@ -50,9 +50,11 @@ nav ul li{
     font-size: 22px;
 }
 nav ul li a.sign{
-background-color: #14AE5C;
+background-color:#103440;
 height: 50px;
 width: 171.27px;
+font-weight: bold;
+color: white;
 }
 nav ul li a{
     color: black;
@@ -87,7 +89,7 @@ input[type=button]:hover{
     background-color:white;
     height: 150px;
     width: 100%;
-    text-align: center;
+    display: flex;
 }
 .copyRight{
     background-color:white;
@@ -127,7 +129,6 @@ input[type=button]:hover{
     text-align: center;
     border: 2px solid grey;
     margin-left: 300px;
-    margin-top: ;
 }
 #pra2{
     background-color: #D9D9D9;
@@ -162,7 +163,7 @@ margin-top: -7cm;
     width:13cm;
     background-color: white;
     border-radius: 10px;
-    margin-left: 2cm;
+    margin-left: 0cm;
     text-align: left;
 }
 span{
@@ -211,7 +212,7 @@ input[type=text]{
 }
 .mess{
     height:170px;
-    width:660px;
+    width:100%;
     background-color: white;
 }
 #protfolio{

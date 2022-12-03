@@ -46,22 +46,32 @@ body{
 .button{
     background-color:white;
     height: 63px;
-    width: 1270px;
-    margin-left: 2cm;
+    width: 100%;
     text-align: center;
     font-size: 20px;
-}
-#dash a{
-    text-decoration: none;
 }
 #dashBody{
     margin-top: -14cm;
     margin-left: 14cm;
     text-align: left;
     background-color: white;
-    height:370px;
+    height:450px;
     width:478px;
     
+}
+.aside #dash p{
+    text-decoration: none;
+    color: black;
+}
+.out a{
+    text-decoration: none;
+    color: black;
+}
+textarea{
+    border: 1px solid #103440;
+    border-radius: 6px;
+    width: 100%;
+    padding: 8px 22px;
 }
     </style>
 </head>
@@ -71,23 +81,23 @@ body{
         <label class="out"><a href="index.html">LOGOUT</a></label>
              </nav>
              <div class="aside"><h3 id="dash"><a href="dashBoard.html"><br><p>Dashboard</p></a><hr><br><br>
-                <a href=""><br><p style="background-color:skyblue;text-decoration: none;">New Articles</p></a><hr><br><br><a href="">
+                <a href=""><br><p style="background-color:skyblue;text-decoration: none;">New Articles</p></a><hr><br><br><a href="view.html">
                     <br><p>View Articles</p></a><hr><br><br></h3></div>
-                    <form role="form" id="dashBody" onsubmit="subArt(event)"><br>
+                    <form role="form" id="dashBody" onsubmit="subArt(event)">
                         <p><h3>Title</h3></p><br>
                         <p>
-                        <input type="text" name="title" style="border-left: none;
+                        <input type="text" name="title" placeholder="Title here!" required="" style="border-left: none;
                         border-right: none;
                         border-top: none;
                         width: 10cm;">
                         </p><br><p><h3>Cover Image</h3></p><br>
                         <p>
-                        <input type="file" id="myFile" name="filename">
+                        <input type="file" id="myFile" name="filename" required="">
                       </p>
                       <br><p><h3>Body</h3></p>
                       <br>
                         <p>
-                        <input type="text" id="body" name="filename">
+                          <textarea type="text" placeholder="write article's title" rows="5" id="body" name="body" required></textarea>
                       </p>
                       <br><p><h3>Tag</h3></p>
                       <br>
@@ -101,7 +111,7 @@ body{
                             <button type="submit" style="text-align:center;width:400px;
                             background-color: lightblue;margin-left: 1cm;">Create</button>
                       </p>
-                      </form><script src="/article.js"></script><br><br><br><br><br><br><br><br>
+                      </form><script src="/article.js"></script><br><br><br><br>
              <div class="button"><br><b>K.Festo</b></div>    
 </body>
 </html>

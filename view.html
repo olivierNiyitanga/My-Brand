@@ -43,10 +43,6 @@ body{
     color: black;
     text-align: center;
 }
-#dashDisplay{
-display: flex;
-margin:30px;
-}
 .button{
     background-color:white;
     height: 63px;
@@ -54,13 +50,20 @@ margin:30px;
     text-align: center;
     font-size: 20px;
 }
-#dashboard{
+#dashBody{
     margin-top: -14cm;
-    margin-left: 10cm;
+    margin-left: 14cm;
     text-align: left;
-    background-color: none;
+    background-color: white;
     height:370px;
+    width:478px;
     
+}
+header{
+    display: inline;
+    width: 90%;
+    margin: auto;
+    align-items: center;
 }
 .aside #dash p{
     text-decoration: none;
@@ -73,20 +76,17 @@ margin:30px;
     </style>
 </head>
 <body>
+    <header>
     <nav>
         <label class="brand">K.Festo</label>
         <label class="out"><a href="index.html">LOGOUT</a></label>
              </nav>
-             <div class="aside"><h3 id="dash"><a href=""><br><p style="background-color:skyblue;text-decoration: none;">Dashboard</p></a><hr><br><br>
-                <a href="admin.html"><br><p>New Articles</p></a><hr><br><br><a href="view.html">
-                    <br><p>View Articles</p></a><hr><br><br></h3></div>
-                    <form role="form" id="dashboard" onsubmit="dashBoard(event)"><br>
-                       <div id="dashDisplay">
-                        <div style="height:70px;width:250px;background-color: white;"></div>&nbsp;&nbsp;
-                        <div style="height:70px;width:250px;background-color: white;"></div>&nbsp;&nbsp;
-                        <div style="height:70px;width:250px;background-color: white;"></div>&nbsp;&nbsp;
-                       </div></form>
-                        <br><br><br><br><br><br><br><br>
-                        <div class="button"><br><b>K.Festo</b></div>  
+             <div class="aside"><h3 id="dash"><a href="dashBoard.html"><br><p>Dashboard</p></a><hr><br><br>
+                <a href="admin.html"><br><p>New Articles</p></a><hr><br><br><a href="">
+                    <br><p style="background-color:skyblue;text-decoration: none;">View Articles</p></a><hr><br><br></h3></div>
+                   <div></div>
+                      </form><script src="/article.js"></script>
+             <div class="button"><br><b>K.Festo</b></div>
+             </header>    
 </body>
 </html>
