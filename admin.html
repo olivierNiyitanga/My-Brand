@@ -42,7 +42,6 @@
         }
 
         .aside {
-            height: 600px;
             width: 190px;
             background-color: white;
             margin-left: 2cm;
@@ -59,12 +58,14 @@
         }
 
         #form {
-            margin-top: -14cm;
+            margin-top: -5cm;
             margin-left: 14cm;
             text-align: left;
             background-color: white;
             height: 450px;
             width: 478px;
+            padding:0 2%;
+            border-radius: 20px;
 
         }
 
@@ -112,7 +113,7 @@
             <hr><br><br>
         </h3>
     </div>
-    <form enctype="multipart/form-data" id="form" onsubmit="submit(event)">
+    <form enctype="multipart/form-data" id="form" onsubmit="return handleSubmit()">
         <p>
         <h3>Title</h3>
         </p><br>
@@ -120,13 +121,13 @@
             <input type="text" id="title" placeholder="Title here!" style="border-left: none;
                         border-right: none;
                         border-top: none;
-                        width: 10cm;">
+                        width: 10cm; text-align: center;">
         </p><br>
         <p>
         <h3>Cover Image</h3>
         </p><br>
         <p>
-            <input type="file" id="myFile" name="filename">
+            <input type="file" id="myFile"  name="filename">
         </p>
     
         <br>
@@ -150,17 +151,11 @@
         <br>
         <p>
             <button type="submit" style="text-align:center;width:400px;
-                            background-color: lightblue;margin-left: 1cm;">Create</button>
+                            background-color: lightblue;">Create</button>
         </p>
     </form><br>
     <br><br>
     <div class="buttom"><br><b>K.Festo</b></div>
-    <!-- <script src="./article.js"></script> -->
-    <script>
-        const submit=(event)=>{
-            event.priventDefault()
-            console.log("here")
-        }
-    </script>
+    <script src="./article.js"></script>
 </body>
 </html>

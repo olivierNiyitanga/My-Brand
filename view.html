@@ -1,94 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin-pannel</title>
     <style>
-        *{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-}
-nav{
-    background-color:white;
-    height: 63px;
-    width: 100%;
-    border-radius: 10px;
-}
-label.brand{
-font-weight: bold;
-font-size: 22px;
-padding: 0 100px;
-line-height: 65px;
-display: inline;
-}
-label.out{
-font-weight: bold;
-font-size: 20px;
-line-height: 65px;
-margin-left: 24cm;
-}
-body{
-    background: #103440;
-}
-.aside{
-    height:600px;
-    width:190px;
-    background-color: white;
-    margin-left: 2cm;
-    color: black;
-    text-align: center;
-}
-.button{
-    background-color:white;
-    height: 63px;
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-}
-#dashBody{
-    margin-top: -14cm;
-    margin-left: 14cm;
-    text-align: left;
-    background-color: white;
-    height:370px;
-    width:478px;
-    
-}
-header{
-    display: inline;
-    width: 90%;
-    margin: auto;
-    align-items: center;
-}
-.aside #dash p{
-    text-decoration: none;
-    color: black;
-}
-.out a{
-    text-decoration: none;
-    color: black;
-}
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: white;
+            height: 63px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        label.brand {
+            font-weight: bold;
+            font-size: 22px;
+            padding: 0 100px;
+            line-height: 65px;
+            display: inline;
+        }
+
+        label.out {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 65px;
+            margin-left: 24cm;
+        }
+
+        body {
+            background: #103440;
+        }
+
+        .aside {
+            width: 190px;
+            background-color: white;
+            margin-left: -28cm;
+            color: black;
+            text-align: center;
+        }
+
+        .buttom {
+            background-color: white;
+            height: 63px;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #dashBody {
+            margin-top: -14cm;
+            margin-left: 14cm;
+            text-align: left;
+            background-color: white;
+            height: 370px;
+            width: 478px;
+
+        }
+
+        header {
+            display: inline;
+            width: 90%;
+            margin: auto;
+            align-items: center;
+        }
+
+        .aside #dash p {
+            text-decoration: none;
+            color: black;
+        }
+
+        .out a {
+            text-decoration: none;
+            color: black;
+        }
+    table{
+        margin: 20px;
+        margin-top: -7cm;
+        height: 12cm;
+        width: 20cm;
+        text-align: center;
+
+    }
     </style>
 </head>
-<body>
+
+<body><center>
     <header>
-    <nav>
-        <label class="brand">K.Festo</label>
-        <label class="out"><a href="index.html">LOGOUT</a></label>
-             </nav>
-             <div class="aside"><h3 id="dash"><a href="dashBoard.html"><br><p>Dashboard</p></a><hr><br><br>
-                <a href="admin.html"><br><p>New Articles</p></a><hr><br><br><a href="">
-                    <br><p style="background-color:skyblue;text-decoration: none;">View Articles</p></a><hr><br><br></h3></div>
-                   <div> <div id="result" style="text-align: center;margin: 15px;">
-                    <button onclick="remove()" class="btn-button">remove</button>
-                </div></div>
-                      <script src="/article.js"></script>
-             <div class="button"><br><b>K.Festo</b></div>
-             </header>    
+        <nav>
+            <label class="brand">K.Festo</label>
+            <label class="out"><a href="index.html">LOGOUT</a></label>
+        </nav>
+        <div class="aside">
+            <h3 id="dash"><a href="dashBoard.html"><br>
+                    <p>Dashboard</p>
+                </a>
+                <hr><br><br>
+                <a href="admin.html"><br>
+                    <p>New Articles</p>
+                </a>
+                <hr><br><br><a href="">
+                    <br>
+                    <p style="background-color:skyblue;text-decoration: none;">View Articles</p>
+                </a>
+                <hr><br><br>
+            </h3>
+        </div>
+        <div>
+            <div id="result" style="text-align: center;margin: 15px;">
+                <center>
+                <table border="0">
+                    <thead>
+                    </thead>
+                    <tbody id="articlesContainer">
+
+                    </tbody>
+                </table>
+                <br>
+                </center>
+            </div>
+        </div>
+        <script>
+            const getArticles = () => {
+                let articles = JSON.parse(localStorage.getItem("articles")) ?? []
+                let articlesContainer = document.getElementById("articlesContainer")
+                let data = ''
+                articles.forEach(element => {
+                    data += `<tr><td>${element.title}</td></tr>
+            <tr><td><Center><div><img src='${element.image}' width='200'/></div></center></td></tr>
+                            <tr><td>${element.body}</td></tr>
+                            <tr><td>${element.tag}</td><tr>
+                 <tr><td><img src="picture/edit.png" style=" height: 30px;width: 30px;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="picture/delete.png" style=" height: 30px;width: 30px;"></td></tr><br><br><br><hr>
+                 `
+                //  document.body.style.background =`url(data:image/png;base64,${element.myFile})`
+                 
+                });
+                articlesContainer.innerHTML = data
+
+            }
+           getArticles()
+        </script>
+        <div class="buttom"><br><b>K.Festo</b></div>
+    </header>
+</center>
 </body>
+
 </html>

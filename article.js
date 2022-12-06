@@ -35,24 +35,47 @@
 //     parentDiv.innerHTML=''
 // }
 // showImages()
-const submit=(event)=>{
-event.preventDefault();
-var title=document.getElementById("title").Value
-// var myFile=document.getElementById("myFile").files.trim();
-// var body=document.getElementById("body").Value.trim();
-// var tag=document.getElementById("tag").Value.trim();
-console.log("submited")
-// if(!title || !myFile || !body || !tag)
-// {
-//     return;
-// }
+let base64String
+document.getElementById('myFile').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+        // convert file to base64 String
+        base64String = reader.result;
+        // // store file
+        // localStorage.setItem('wallpaper', base64String);
+        // // display image
+        document.body.style.background = `url(${base64String})`;
+    };
     
-// var newArticle={
-//    title:title,
-//    myFile:myFile,
-//    body:body,
-//    tag:tag,
-//     };
-// localStorage.setItem("newArticle",JSON.stringify(newArticle));
+});
+
+
+const handleSubmit = () => {
+    const articles = JSON.parse(localStorage.getItem("articles")) ?? []
+    var title = document.getElementById('title').value
+    var body = document.getElementById('body').value
+    var tag = document.getElementById('tag').value
+    if (!title || !base64String || !body || !tag) {
+        return;
+    }
+    var newArticle = {
+        id: articles.length,
+        title: title,
+        body: body,
+        image: base64String,
+        tag: tag,
+    };
+
+    articles.unshift(newArticle)
+    localStorage.setItem("articles", JSON.stringify(articles));
+    document.getElementById('title').value = ''
+    document.getElementById('body').value = ''
+    document.getElementById('tag').value = ''
+    document.getElementById('myFile').value = ''
+    alert('data inserted well done')
+    return false
 
 };
+
