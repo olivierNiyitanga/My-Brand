@@ -44,7 +44,7 @@
         .aside {
             width: 190px;
             background-color: white;
-            margin-left: -28cm;
+            margin-left: -26cm;
             color: black;
             text-align: center;
         }
@@ -53,7 +53,6 @@
             background-color: white;
             height: 63px;
             width: 100%;
-            text-align: center;
             font-size: 20px;
         }
 
@@ -83,14 +82,17 @@
             text-decoration: none;
             color: black;
         }
-    table{
-        margin: 20px;
-        margin-top: -7cm;
-        height: 12cm;
-        width: 20cm;
-        text-align: center;
+        #blogContainer{
+         display: flex;
+         flex-wrap: wrap;
+                   }
+        #blogContainer .blogItem{
+           margin:auto;
+           margin-left: 10cm;
+                   }
+                   .blogItem{
 
-    }
+                   }
     </style>
 </head>
 
@@ -115,32 +117,28 @@
                 <hr><br><br>
             </h3>
         </div>
-        <div>
-            <div id="result" style="text-align: center;margin: 15px;">
-                <center>
-                <table border="0">
-                    <thead>
-                    </thead>
-                    <tbody id="articlesContainer">
+            <div id="blogContainer">
 
-                    </tbody>
-                </table>
-                <br>
-                </center>
             </div>
-        </div>
         <script>
             const getArticles = () => {
                 let articles = JSON.parse(localStorage.getItem("articles")) ?? []
-                let articlesContainer = document.getElementById("articlesContainer")
+                let articlesContainer = document.getElementById("blogContainer")
                 let data = ''
                 articles.forEach(element => {
-                    data += `<tr><td>${element.title}</td></tr>
-            <tr><td><Center><div><img src='${element.image}' width='200'/></div></center></td></tr>
-                            <tr><td>${element.body}</td></tr>
-                            <tr><td>${element.tag}</td><tr>
-                 <tr><td><img src="picture/edit.png" style=" height: 30px;width: 30px;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="picture/delete.png" style=" height: 30px;width: 30px;"></td></tr><br><br><br><hr>
-                 `
+                    data += `<div class="blogItem">
+                        <p><img src="${element.image}" style="width:300px;height:400px;margin-top:-6cm;"></p>
+                        <h2 style="background-color:white;width:300px;">
+                        <p style="color:black;font-weight:bold;font-size:20px; text-align:center;">${element.title}</p>
+                        <p style="text-align:center;"><br>
+                        <p style="color:white;font-weight:15px;font-size:20px; text-align:center;">${element.body}</p><br>
+                        <p style="color:skyblue;font-weight:bold;font-size:20px; text-align:center;">${element.tag}</p>
+                        <img src="picture/edit.png" style=" height: 30px;width: 30px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="picture/delete.png" style=" height: 30px;width: 30px;">
+                        </p>
+                        </h2>
+                        </div>`
                 //  document.body.style.background =`url(data:image/png;base64,${element.myFile})`
                  
                 });
@@ -149,6 +147,7 @@
             }
            getArticles()
         </script>
+        <br>
         <div class="buttom"><br><b>K.Festo</b></div>
     </header>
 </center>
