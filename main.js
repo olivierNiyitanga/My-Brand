@@ -21,7 +21,6 @@ function loginfunc() {
 
     var name = localStorage.getItem(flname);
     var data = JSON.parse(name);
-    console.log(data);
     if (name == null) {
         result.innerHTML = "incorrect username";
     }
