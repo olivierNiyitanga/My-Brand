@@ -19,7 +19,7 @@ event.preventDefault();
     var pwd = document.getElementById('pwd').value;
     var result = document.getElementById('result');
 
-    var name = localStorage.getItem('flname');
+    var name = localStorage.getItem(flname);
     var data = JSON.parse(name);
     if (name == null) {
         result.innerHTML= "correct your username plz!!!";

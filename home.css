@@ -149,7 +149,7 @@ input[type=button]:hover{
 }
 .board div{
     align-items: center;
-    margin: 70px;
+    margin: 50px;
     margin-top: -0px;
 }
 #progressing{
