@@ -122,7 +122,7 @@ input[type=button]:hover{
     display: flex;
 }
 #pra1{
-    background-color: #D9D9D9;
+    background-color:darkgrey;
     height: 50px;
     width: 180px;
     font-weight: bold;
@@ -130,7 +130,7 @@ input[type=button]:hover{
     border: 2px solid darkslategrey;
 }
 #pra2{
-    background-color: #D9D9D9;
+    background-color:darkgrey;
     height: 50px;
     width: 180px;
     font-weight: bold;
@@ -152,16 +152,12 @@ input[type=button]:hover{
     margin: 50px;
     margin-top: -0px;
 }
-#progressing{
-   
-}
+
 .progress{
     height: 10px;
     width:13cm;
     background-color: white;
     border-radius: 10px;
-    margin-left: 0cm;
-    text-align: left;
 }
 span{
     font-size: 14px;
@@ -174,24 +170,28 @@ span{
     width: 90%;
     border-radius: 10px;
     background-color:#14E81D;
+    margin-left: -1px;
 }
 .progress #progr{
     height: 10px;
     width: 80%;
     border-radius: 10px;
     background-color:#14E81D;
+    margin-left: -1px;
 }
 .progress #prog{
     height: 10px;
     width: 75%;
     border-radius: 10px;
     background-color:#14E81D;
+    margin-left: -1px;
 }
 .progress #pro{
     height: 10px;
     width: 70%;
     border-radius: 10px;
     background-color:#14E81D;
+    margin-left: -1px;
 }
 #lang{
     color: white;
