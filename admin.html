@@ -19,7 +19,6 @@
             background-color: white;
             height: 63px;
             width: 100%;
-            border-radius: 10px;
         }
 
         label.brand {
@@ -43,29 +42,27 @@
 
         .aside {
             width: 190px;
+            height: 100%;
+            padding-right: 15rem;
             background-color: white;
-            margin-left: 2cm;
-            color: black;
-            text-align: center;
-        }
-
-        .buttom {
-            background-color: white;
-            height: 63px;
-            width: 100%;
-            text-align: center;
-            font-size: 20px;
+            margin-left: 0%;
+            background: white;
+            position: fixed;
+            z-index: 1000;
+            padding: 1.2rem 1.4rem;
         }
 
         #form {
-            margin-top: -5cm;
-            margin-left: 14cm;
-            text-align: left;
+            margin-top: 6rem;
+            margin-left: 35rem;
             background-color: white;
-            height: 450px;
-            width: 478px;
-            padding:0 2%;
+            height: 460px;
+            width: 350px;
+            padding: 2%;
             border-radius: 20px;
+            align-items: center;
+            justify-content: center;
+            /* margin-right: 20rem; */
 
         }
 
@@ -82,13 +79,69 @@
         textarea {
             border: 1px solid #103440;
             border-radius: 6px;
-            width: 100%;
+            width: 80%;
             padding: 8px 22px;
         }
 
         img {
             height: 418px;
             width: 285.04px;
+        }
+
+        button {
+            margin-left: 30%;
+            margin-top: -10%;
+        }
+
+        .title .title {
+            margin-right: 2rem;
+        }
+
+
+
+
+        @media (max-width:1200px) {}
+
+
+
+
+        @media (max-width:400px) {
+            .dashDisplay {
+                display: inline-block;
+                margin: 10px;
+                margin-top: 2rem;
+                margin-left: 3rem;
+                height: 20px;
+                width: 18px;
+
+            }
+
+            .aside {
+                display: none;
+            }
+
+            #form {
+                margin-left: 0.5rem;
+            }
+
+        }
+
+        @media (max-width:1000px) {
+            label.out {
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 65px;
+                margin-left: 35rem;
+            }
+        }
+
+        @media (max-width:1115px) {
+            label.out {
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 65px;
+                margin-left: 35rem;
+            }
         }
     </style>
 </head>
@@ -113,23 +166,22 @@
             <hr><br><br>
         </h3>
     </div>
-    <form enctype="multipart/form-data" id="form" onsubmit="return handleSubmit()">
+    <form enctype="multipart/form-data" id="form">
         <p>
         <h3>Title</h3>
         </p><br>
         <p>
-            <input type="text" id="title" placeholder="Title here!" style="border-left: none;
-                        border-right: none;
-                        border-top: none;
-                        width: 10cm; text-align: center;">
+            <input type="text" class="title" id="title" placeholder="Title here!" style="
+                        width: 16rem; text-align: center;">
         </p><br>
-        <p>
-        <h3>Cover Image</h3>
-        </p><br>
-        <p>
-            <input type="file" id="myFile"  name="filename">
-        </p>
-    
+        <div id="cover">
+            <p>
+            <h3>Cover Image</h3>
+            </p><br>
+            <p>
+                <input type="file" id="myFile" name="filename">
+            </p>
+        </div>
         <br>
         <p>
         <h3>Body</h3>
@@ -150,12 +202,103 @@
         </p>
         <br>
         <p>
-            <button type="submit" style="text-align:center;width:400px;
+            <button class="button" type="submit" id="submitBtn" style="text-align:center;width:100px;
                             background-color: lightblue;">Create</button>
         </p>
-    </form><br>
-    <br><br>
-    <div class="buttom"><br><b>K.Festo</b></div>
-    <script src="./article.js"></script>
+    </form>
+    <!-- <script src="./article.js"></script> -->
+    <script>
+        const user = JSON.parse(localStorage.getItem('loginedUser'))
+
+        if (localStorage.getItem("updateArticle")) {
+            let article = JSON.parse(localStorage.getItem("updateArticle"));
+
+            document.getElementById("cover").style.display = "none";
+            document.getElementById("submitBtn").value = "UPDATE";
+
+            document.getElementById("title").value = article.title;
+            document.getElementById("body").value = article.content;
+            // document.getElementById("tag").value = article.tag;
+            // var articleId = article.id
+
+            document
+                .getElementById("form")
+                .addEventListener("submit", (event) => {
+                    event.preventDefault();
+
+                    const title = document.getElementById("title").value;
+                    const content = document.getElementById("body").value;
+                    const tag = document.getElementById("tag").value;
+
+                    var myHeaders = new Headers();
+                    myHeaders.append("Authorization", `Bearer ${user.token}`);
+                    myHeaders.append("Content-Type", "application/json");
+
+                    var raw = JSON.stringify({
+                        "title": title,
+                        "content": content
+                    });
+
+                    var requestOptions = {
+                        method: 'PUT',
+                        headers: myHeaders,
+                        body: raw,
+                        redirect: 'follow'
+                    };
+
+                    fetch(`https://my-brand-api.onrender.com/api/articles/${article.id}/update`, requestOptions)
+                        .then(response => response.text())
+                        .then(result => console.log(result))
+                        .catch(error => console.log('error', error));
+
+
+                });
+        } else {
+
+            const postForm = document.querySelector('[create-form]');
+
+            document.getElementById("myFile").required = ""
+
+            document
+                .getElementById("form")
+                .addEventListener("submit", (event) => {
+                    event.preventDefault();
+
+                    const title = document.getElementById("title").value;
+                    const body = document.getElementById("body").value;
+                    const tag = document.getElementById("tag").value;
+                    const image = document.getElementById("myFile");
+                    var myHeaders = new Headers();
+                    myHeaders.append("Content-Type", "application/json");
+                    myHeaders.append("Authorization", `Bearer ${user.token}`);
+
+                    var formdata = new FormData();
+                    formdata.append("title", "this is testing blog article title 2");
+                    formdata.append("content", "this is testing blog article title content 2");
+                    // formdata.append("photo", image.files[0], "/C:/Users/ALU TECH TEAM/Desktop/55650162.jpg");
+
+                    var raw = JSON.stringify({
+                        "title": title,
+                        "content": body
+                    });
+                    var requestOptions = {
+                        method: 'POST',
+                        headers: myHeaders,
+                        body: raw,
+                        redirect: 'follow'
+                    };
+                    console.log('here')
+                    fetch("https://my-brand-api.onrender.com/api/articles/add", requestOptions)
+                        .then(response => response.json())
+                        .then(result => {
+
+                            console.log(result)
+                            window.open("view.html", "_self");
+                        })
+                        .catch(error => console.log('error', error));;
+                });
+        }
+    </script>
 </body>
+
 </html>

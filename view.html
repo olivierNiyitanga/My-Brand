@@ -19,7 +19,6 @@
             background-color: white;
             height: 63px;
             width: 100%;
-            border-radius: 10px;
         }
 
         label.brand {
@@ -41,19 +40,17 @@
             background: #103440;
         }
 
+
         .aside {
             width: 190px;
+            height: 100%;
+            padding-right: 15rem;
             background-color: white;
-            margin-left: -26cm;
-            color: black;
-            text-align: center;
-        }
-
-        .buttom {
-            background-color: white;
-            height: 63px;
-            width: 100%;
-            font-size: 20px;
+            margin-left: 0%;
+            background: white;
+            position: fixed;
+            z-index: 1000;
+            padding: 1.2rem 1.4rem;
         }
 
         #dashBody {
@@ -66,13 +63,6 @@
 
         }
 
-        header {
-            display: inline;
-            width: 90%;
-            margin: auto;
-            align-items: center;
-        }
-
         .aside #dash p {
             text-decoration: none;
             color: black;
@@ -82,21 +72,64 @@
             text-decoration: none;
             color: black;
         }
-        #blogContainer{
-         display: flex;
-         flex-wrap: wrap;
-                   }
-        #blogContainer .blogItem{
-           margin:auto;
-           margin-left: 10cm;
-                   }
-                   .blogItem{
 
-                   }
+        #blogContainer {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 14rem;
+        }
+
+        #blogContainer .blogItem {
+            margin: 2rem;
+            padding: 0 2%;
+        }
+
+        @media (max-width:1200px) {}
+
+
+
+
+        @media (max-width:400px) {
+            .dashDisplay {
+                display: inline-block;
+                margin: 10px;
+                margin-top: 2rem;
+                margin-left: 3rem;
+                height: 20px;
+                width: 18px;
+
+            }
+
+            .aside {
+                display: none;
+            }
+
+            #form {
+                margin-left: 0.5rem;
+            }
+
+        }
+
+        @media (max-width:1000px) {
+            label.out {
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 65px;
+                margin-left: 35rem;
+            }
+        }
+
+        @media (max-width:1115px) {
+            label.out {
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 65px;
+                margin-left: 35rem;
+            }
+        }
     </style>
-</head>
 
-<body><center>
+<body>
     <header>
         <nav>
             <label class="brand">K.Festo</label>
@@ -117,39 +150,89 @@
                 <hr><br><br>
             </h3>
         </div>
-            <div id="blogContainer">
+        <div id="blogContainer">
 
-            </div>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
-            const getArticles = () => {
-                let articles = JSON.parse(localStorage.getItem("articles")) ?? []
-                let articlesContainer = document.getElementById("blogContainer")
-                let data = ''
-                articles.forEach(element => {
-                    data += `<div class="blogItem">
-                        <p><img src="${element.image}" style="width:300px;height:400px;margin-top:-6cm;"></p>
-                        <h2 style="background-color:white;width:300px;">
-                        <p style="color:black;font-weight:bold;font-size:20px; text-align:center;">${element.title}</p>
-                        <p style="text-align:center;"><br>
-                        <p style="color:white;font-weight:15px;font-size:20px; text-align:center;">${element.body}</p><br>
-                        <p style="color:skyblue;font-weight:bold;font-size:20px; text-align:center;">${element.tag}</p>
-                        <img src="picture/edit.png" style=" height: 30px;width: 30px;">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img src="picture/delete.png" style=" height: 30px;width: 30px;">
+            //   axios.get('https://my-brand-api.onrender.com/api/post/')
+            //     .then(function (response) {
+            //       //document.getElementById("content").innerHTML = response.data;
+            //       console.log(response.data);
+            //     //   document.getElementById("blogContainer").innerHTML = response.data;
+            //     })
+            //     .catch(function (error) {
+            //       console.log(error);
+            //     });
+
+
+
+            axios.get('https://my-brand-api.onrender.com/api/articles/')
+                .then(function (response) {
+                    let data = response.data;
+                    data.forEach(function (info) {
+                        let div = document.createElement("div");
+                        //   div.innerHTML = `title: ${info.title} content: ${info.content} 
+                        //   <img src="${info.imageUrl}" style="width:300px;height:400px;margin-top:-6cm;">
+                        //   ${info.imageUrl}`;
+                        div.innerHTML = `<div class="blogItem">
+                        <div><p><img src="${info.imageUrl}" style="width:300px;height:300px;"></p>
+                        <div style="">
+                        <p style="color:black;font-weight:bold;font-size:20px; text-align:center;">${info.title}</p><hr>
+                        <p style="font-size:15px;font-family:italic;">${info.content}</p><br>
+                        <p style="color:brown;font-weight:bold;font-size:20px; text-align:right;">${info.postedDate}</p>
+                        <a href='admin.html' onclick="updateArticle('${info._id}','${info.title}','${info.content}')"><br>
+                            <button style="background:none;border:none;">
+                        <img src="picture/edit.png" style="height: 40px;width: 40px;margin-left: 2.5rem;"">
+                            </button></a>
+                        <button onclick="deleteArticle('${info._id}')" style="background:none;border:none;">
+                        <img src="picture/delete.png" style="height: 40px;width: 40px;margin-left: 8rem;">
+                        </button>
                         </p>
-                        </h2>
+                        </div></div>
                         </div>`
-                 
+                        document.getElementById("blogContainer").appendChild(div);
+
+                        //   var pic=
+                    });
+                })
+                .catch(function (error) {
+                    console.log(error);
                 });
-                articlesContainer.innerHTML = data
+
+            const deleteArticle = async id => {
+                const user = JSON.parse(localStorage.getItem('loginedUser'))
+                let headersList = {
+                    "Accept": "*/*",
+                    "Authorization": `Bearer ${user.token}`
+                }
+
+                let reqOptions = {
+                    url: `https://my-brand-api.onrender.com/api/articles/${id}`,
+                    method: "DELETE",
+                    headers: headersList,
+                }
+
+                let response = await axios.request(reqOptions);
+                console.log(response.data);
+                window.open(view.html)
 
             }
-           getArticles()
+
+            const updateArticle = async (id, title, content) => {
+
+                const article = {
+                    id, title, content
+                }
+                localStorage.setItem("updateArticle", JSON.stringify(article))
+
+
+            };
+            localStorage.removeItem('updateArticle')
         </script>
-        <br>
-        <div class="buttom"><br><b>K.Festo</b></div>
-    </header>
-</center>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,32 +8,83 @@
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="login.css">
 </head>
-<body><center>
-    <div>
-        <label class="brand"><img src="picture/pall.webp" style="height: 60px;width:60px;margin-left: -4cm;"></label>
-                     <ul>
-                         <li><a href="index.html">Home</a></li>
-                         <li><a href="signup.html" class="sign">Sign-up</a></li>
-                     </ul>
-                    </div>  <br><br><br><br><br><br><br><br>
-                    <form onsubmit="loginfunc()">
-    <nav>
-        <label class="label">Login</label><hr>
-        <br>
-<h3 id="loginBody"><p>Username:</p>
-<p><img src="picture/person.jpg" style="height:30px;width:30px;"><input type="text" name="flname" id="flname" placeholder="Enter your name"></p><br><br><br>
-<p>Password:</p>
-<p><img src="picture/pas.png" style="height:30px;width:30px;"><input type="password" name="pwd" id="pwd" placeholder="Enter your password"></p>
 
-</h3>
-<h5 style="text-align:right;"><p><a href="#">Forgot Password?</a></p></h5><br><br><br>
-    <button type="submit">Login</button><br>
-    <h5 style="text-align:center;"><p><a href="signup.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sign-up</a></p><p id="result">welcome login...</p></h5>
-    </nav></form>
-    <script src="./main.js"></script>
-</center>
+<body>
+    <center>
+        <div>
+            <label class="brand"><img src="picture/pall.webp"
+                    style="height: 60px;width:60px;margin-left: -4cm;"></label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="signup.html" class="sign">Sign-up</a></li>
+            </ul>
+        </div> <br><br><br><br><br><br><br><br>
+        <img src="picture/sign.png" style="margin-left:-45rem ;margin-top: 10rem;">
+        <form action="" id="loginForm">
+            <nav>
+                <label class="label">Login</label>
+                <hr>
+                <br>
+                <h3 id="loginBody">
+                    <p style="font-size: 20px;text-align: center;">Email:</p>
+                    <p><img src="picture/email.png" style="height:20px;width:20px;"><input type="text" name="email"
+                            id="email" placeholder=""></p><br><br><br>
+                    <p style="font-size: 20px;text-align: center;">Password:</p>
+                    <p><img src="picture/pas.png" style="height:30px;width:30px;"><input type="password" name="pwd"
+                            id="pwd" placeholder=""></p>
+
+                </h3>
+                <h5 style="margin-left: 13.5rem;margin-top: 2rem;">
+                    <p><a href="#">Forgot Password?</a></p>
+                </h5><br>
+                <button type="submit">Login</button><br>
+                <h5 style="text-align:center;"><br>
+                    <p style="margin-left: 10rem"><a href="signup.html">Sign-up</a></p>
+                    <p id="result">welcome login...</p>
+                </h5>
+            </nav>
+        </form>
+        <script>
+            document.getElementById("loginForm").addEventListener("submit", (e) => {
+              e.preventDefault();
+        
+              const email = document.getElementById("email").value;
+              const password = document.getElementById("pwd").value;
+        
+              var myHeaders = new Headers();
+              myHeaders.append("Content-Type", "application/json");
+        
+              var raw = JSON.stringify({
+                "email": email,
+                "password": password
+              });
+        
+              var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+              };
+        
+              fetch("https://my-brand-api.onrender.com/api/account/login", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                  console.log(result)
+                  if (result.success) {
+                    localStorage.setItem("loginedUser", JSON.stringify(result.user));
+                    if (result.user.role == "admin") {
+                        window.open("dashBoard.html", "_self");
+                    } else {
+                      location.href = "./home.html";
+                    }
+                  }
+                  else {
+                    alert(result.message)
+                  }
+                })
+                .catch(error => console.log('error', error));
+            });
+          </script>
 </body>
+
 </html>

@@ -7,7 +7,7 @@ document.getElementById('myFile').addEventListener('change', (e) => {
     reader.onloadend = () => {
         base64String = reader.result;
     };
-    
+
 });
 
 
@@ -30,9 +30,9 @@ const handleSubmit = () => {
     articles.unshift(newArticle)
     localStorage.setItem("articles", JSON.stringify(articles));
     document.getElementById('title').value = '',
-    document.getElementById('body').value = '',
-    document.getElementById('tag').value = '',
-    document.getElementById('myFile').value = ''
+        document.getElementById('body').value = '',
+        document.getElementById('tag').value = '',
+        document.getElementById('myFile').value = ''
     alert('data inserted well done')
     return false
 
