@@ -271,13 +271,13 @@
                     const tag = document.getElementById("tag").value;
                     const image = document.getElementById("myFile");
                     var myHeaders = new Headers();
-                    myHeaders.append("Content-Type", "application/json");
+                    // myHeaders.append("Content-Type", "application/json");
                     myHeaders.append("Authorization", `Bearer ${user.token}`);
 
                     var formdata = new FormData();
-                    formdata.append("title", "this is testing blog article title 2");
-                    formdata.append("content", "this is testing blog article title content 2");
-                    // formdata.append("photo", image.files[0], "/C:/Users/ALU TECH TEAM/Desktop/55650162.jpg");
+                    formdata.append("title", title);
+                    formdata.append("content", body);
+                    formdata.append("photo", image.files[0]);
 
                     var raw = JSON.stringify({
                         "title": title,
@@ -286,7 +286,7 @@
                     var requestOptions = {
                         method: 'POST',
                         headers: myHeaders,
-                        body: raw,
+                        body: formdata,
                         redirect: 'follow'
                     };
                     console.log('here')
