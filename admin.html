@@ -248,9 +248,11 @@
 
                     fetch(`https://my-brand-api.onrender.com/api/articles/${article.id}/update`, requestOptions)
                         .then(response => response.text())
-                        .then(result => console.log(result))
+                        .then(result => {
+                            console.log(result)
+                            window.open("view.html", "_self");
+                        })
                         .catch(error => console.log('error', error));
-
 
                 });
         } else {

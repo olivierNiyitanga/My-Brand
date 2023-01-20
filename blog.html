@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,38 +8,55 @@
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="home.css">
 </head>
+
 <body>
   <nav>
     <label class="brand"><img src="picture/pall.webp" style="height: 60px;width:60px;"></label>
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skill" id="skillTab">Skills</a></li>
-        <li><a href="#protfolio">Protfolio</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="login.html" class="sign">Sign-In</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skill" id="skillTab">Skills</a></li>
+      <li><a href="#protfolio">Protfolio</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="login.html" class="sign">Sign-In</a></li>
     </ul>
-</nav><br>
-<div class="items">
-<div id="imageBlog" style="text-align: center;">
-<img src="images/me.png">
-</div>
-</div>
-<div style="background-color: white;">
-  <h3 style="margin-left: 18rem;font-family: 'Times New Roman', Times, serif;">My journey in Andela</h3>
-  
-  <br>
-  <p style="margin-left: 10rem; width:30rem;font-family: 'Times New Roman', Times, serif;">My journey in Andela is like
-   movies so don't complain main jhjjjjjjjjjjjjjjjjjklgjjjjjjjjjjjjjjjjjjjjh</p><br>
-  <img src="picture/comm.png" style="height: 40px;width: 40px;margin-left: 13rem;">  
-  <img src="picture/like.png" style="height: 40px;width: 40px;margin-left: 20rem;">
-  <div>
-    <h3 style="margin-left: 17rem;font-family: 'Times New Roman', Times, serif;">LEAVE WITH A COMMENT!!!</h3> 
-  </div><br>
-  <textarea style="margin-left: 10rem; width:30rem;font-family: 'Times New Roman', Times, serif;height: 12rem;"></textarea><br>
-  <button type="submit" style="background-color: rgb(19, 77, 235);margin-left: 22rem;"><b>Send Comment?!!</b></button>
-  <br><br>  
-</div>
+  </nav><br>
+  <div class="items">
+    <div id="imageBlog" style="text-align: center;">
+      <img src="./images/me.png"  id="image">
+    </div>
+  </div>
+  <div style="background-color: white;">
+    <h3 style="margin-left: 18rem;font-family: 'Times New Roman', Times, serif;" id="title">My journey in Andela</h3>
+
+    <br>
+    <p style="margin-left: 10rem; width:30rem;font-family: 'Times New Roman', Times, serif;" id="desc">My journey in Andela is
+      like
+      movies so don't complain main jhjjjjjjjjjjjjjjjjjklgjjjjjjjjjjjjjjjjjjjjh</p><br>
+    <img src="picture/comm.png" style="height: 40px;width: 40px;margin-left: 13rem;">
+    <img src="picture/like.png" style="height: 40px;width: 40px;margin-left: 20rem;">
+    <div>
+      <h3 style="margin-left: 17rem;font-family: 'Times New Roman', Times, serif;">LEAVE WITH A COMMENT!!!</h3>
+    </div><br>
+    <textarea
+      style="margin-left: 10rem; width:30rem;font-family: 'Times New Roman', Times, serif;height: 12rem;"></textarea><br>
+    <button type="submit" style="background-color: rgb(19, 77, 235);margin-left: 22rem;"><b>Send Comment?!!</b></button>
+    <br><br>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const articleId = localStorage.getItem('readArticle')
+    axios.get(`https://my-brand-api.onrender.com/api/articles/${articleId}`)
+      .then(function (response) {
+        let data = response.data;
+        console.log(data)
+        document.getElementById('image').src=data.imageUrl
+        document.getElementById('title').innerHTML=data.title
+        document.getElementById('desc').innerHTML=data.content
+        
+      })
+  </script>
 </body>
+
 </html>
