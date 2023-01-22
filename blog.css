@@ -24,17 +24,10 @@ nav{
     border-radius: 10px;
     position: fixed;
 }
-label.brand{
-font-weight: bold;
-font-size: 22px;
-margin-top: -2cm;
-margin-left: 2cm;
-display: inline;
-}
 nav ul{
     float: right;
-    margin-right: 100px;
-    flex-direction: column;
+    margin-right: 400px;
+    display: flex;
 
 }
 nav ul li{
@@ -247,6 +240,16 @@ border-radius: 10px;
 }
 .likes{
     padding-right: 50px;
+}
+.commentsContainer{
+    font-size: 6px;
+}
+.comment-content{
+    font-size: 14px;
+}
+.comment-item{
+    display: flex;
+    margin-left: 20rem;
 }
 @media(max-width:400px){
     .taggle-botton{

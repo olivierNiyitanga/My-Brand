@@ -155,15 +155,18 @@
                     <br>
                     <p>KIGALI,RWANDA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kabanofesto1@gmail.com
                         &nbsp;&nbsp;&nbsp;&nbsp;+250785206973</p><br>
-                    <p><input type="text" name="fname" placeholder="Name">
+                        <form action="" id="messageForm">
+                    <p><input type="text" name="fname" placeholder="Name" id="username">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="email" placeholder="Email">
+                        <input type="text" name="email" placeholder="Email" id="email">
                     </p>
                     <br>
                     <p>
                         <textarea type="text" placeholder="write article's title" rows="5" id="mess" name="message"
                             required></textarea>
+                            <input type="submit" class="submit-btn" value="SEND MESSAGE" />
                     </p>
+                    </form>
                     <br><br>
                     <p style="text-align: center;">Follow me to the social Media:</p>
                     <p style="text-align: center;"><img src="picture/Instagram.webp"
@@ -219,11 +222,10 @@
                     div.innerHTML = `<div class="blogItem">
                     <a href='./blog.html' onclick="read('${info._id}')"> <div><p><img src="${info.imageUrl}" style="width:300px;height:300px;"></p>
                     <div style="background-color:white;width:300px">
-                        <p style="color:black;font-weight:bold;font-size:20px; text-align:center;">${info.title}</p>
-                    <img src="picture/comm.png" style="height: 40px;width: 40px;margin-left: 2.5rem;">  
-                    <img src="picture/like.png" style="height: 40px;width: 40px;margin-left: 8rem;">
+                        <p style="color:black;font-weight:bold;font-size:20px; text-align:center;">${info.title}
+                    <img src="picture/comm.png" style="height: 40px;width: 40px;margin-left: 2.5rem;">${info.comments.length} 
+                    <img src="picture/like.png" style="height: 40px;width: 40px;margin-left: 8rem;">${info.likes.length}
                     <p style="color:brown;font-weight:bold;font-size:20px; text-align:center;">${info.postedDate}</p>
-                    </div>
                     </div>
                     </a>
                     </div>`
@@ -239,7 +241,41 @@
         const read = id => {
             localStorage.setItem('readArticle', id)
         }
+        const sendMessage = e => {
+      e.preventDefault()
 
+      const username = document.getElementById('username').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('mess').value;
+
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify({
+        "name": username,
+        "email": email,
+        "message": message
+      });
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
+
+      fetch("https://my-brand-api.onrender.com/api/message/sendMessage/", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          console.log(result)
+          alert("Thank you for Your Message")
+          document.getElementById('messageForm').reset()
+        })
+        .catch(error => console.log('error', error));
+
+
+    }
+    document.getElementById('messageForm').addEventListener('submit', sendMessage)
     </script>
 </body>
 

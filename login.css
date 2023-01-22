@@ -39,8 +39,9 @@ display: inline;
 }
 div ul{
     float: right;
-    margin-right: 250px;
+    margin-right: 50px;
     padding: 0 8%;
+    display: flex;
 
 }
 div ul li{
@@ -48,13 +49,6 @@ div ul li{
     line-height: 65px;
     margin: 0 100px;
     font-size: 22px;
-}
-div ul li a.sign{
-    background-color:#103440;
-    height: 50px;
-    width: 171.27px;
-    font-weight: bold;
-    color: white;
 }
 div ul li a{
     color: black;

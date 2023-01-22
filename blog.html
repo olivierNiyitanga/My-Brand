@@ -6,12 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="home.css">
+  <link rel="stylesheet" type="text/css" href="blog.css">
+  <style>
+    #commentNumber{
+      margin-left: 12.5rem;
+      margin-top: -2rem;
+    }
+    #likes{
+      margin-top: -1.9rem;
+      margin-left: 19.5rem;
+    }
+  </style>
 </head>
 
 <body>
   <nav>
-    <label class="brand"><img src="picture/pall.webp" style="height: 60px;width:60px;"></label>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -19,44 +28,204 @@
       <li><a href="#protfolio">Protfolio</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="login.html" class="sign">Sign-In</a></li>
+      <li><a href="login.html" class="sign" id="login">Sign-In</a></li>
+      <li><a href="#" class="signout" id="logout" onclick="logout()">Logout</a></li>
+      <li><a href="#"> <span id="username"></span></a></li>
     </ul>
   </nav><br>
   <div class="items">
     <div id="imageBlog" style="text-align: center;">
-      <img src="./images/me.png"  id="image">
+      <img src="./images/me.png" id="image">
     </div>
   </div>
   <div style="background-color: white;">
-    <h3 style="margin-left: 18rem;font-family: 'Times New Roman', Times, serif;" id="title">My journey in Andela</h3>
-
-    <br>
-    <p style="margin-left: 10rem; width:30rem;font-family: 'Times New Roman', Times, serif;" id="desc">My journey in Andela is
-      like
-      movies so don't complain main jhjjjjjjjjjjjjjjjjjklgjjjjjjjjjjjjjjjjjjjjh</p><br>
-    <img src="picture/comm.png" style="height: 40px;width: 40px;margin-left: 13rem;">
-    <img src="picture/like.png" style="height: 40px;width: 40px;margin-left: 20rem;">
     <div>
-      <h3 style="margin-left: 17rem;font-family: 'Times New Roman', Times, serif;">LEAVE WITH A COMMENT!!!</h3>
-    </div><br>
-    <textarea
-      style="margin-left: 10rem; width:30rem;font-family: 'Times New Roman', Times, serif;height: 12rem;"></textarea><br>
-    <button type="submit" style="background-color: rgb(19, 77, 235);margin-left: 22rem;"><b>Send Comment?!!</b></button>
-    <br><br>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script>
-    const articleId = localStorage.getItem('readArticle')
-    axios.get(`https://my-brand-api.onrender.com/api/articles/${articleId}`)
-      .then(function (response) {
-        let data = response.data;
-        console.log(data)
-        document.getElementById('image').src=data.imageUrl
-        document.getElementById('title').innerHTML=data.title
-        document.getElementById('desc').innerHTML=data.content
-        
-      })
-  </script>
+    <h3 style="width: 700px;margin-left: 10rem;font-family: 'Times New Roman', Times, serif;" id="title">My journey in Andela</h3>
+    <h3 style="margin-left: 64rem;margin-top: -1.3rem;font-family: 'Times New Roman', Times, serif;" id="postedDate">My journey in Andela</h3>
+    </div>
+    <br>
+    <p style="margin-left: 10rem;font-family: 'Times New Roman', Times, serif;" id="desc">My journey in
+      Andela is
+      like
+      movies so don't complain main</p><br>
+    <div style="display: flex;">
+      <div class="likes">
+        <img src="picture/comm.png" style="height: 40px;width: 40px;margin-left: 13rem;">
+
+        <h3 id="commentNumber"></h3>
+      </div>
+      <div class="likes">
+        <div class="likes" onclick="likeArticle()">
+          <img src="picture/like.png" style="height: 40px;width: 40px;margin-left: 20rem;" id="likeIcon">
+          <h3 id="likes"></h3>
+        </div>
+      </div>
+    </div>
+    <caption><h2 style="margin-left: 20rem;font-family: 'Times New Roman', Times, serif;">COMMENT(S)</h2></caption>
+    <br>
+    <div id="commentsContainer"></div>
+    <br>
+    <caption><h4 style="margin-left: 30rem;font-family: 'Times New Roman', Times, serif;">LEAVE WITH A COMMENT!!!</h3></caption>
+    <form action="" id="commentForm">
+      <div>
+        <textarea style="margin-left: 10rem; width:60rem;font-family: 'Times New Roman', Times, serif;height: 12rem;"
+          id="message">
+    </textarea><br>
+        <button type="submit" style="background-color: rgb(19, 77, 235);margin-left: 32rem;font-size: 20px;"><b>Send
+            Comment?!!</b></button>
+        <br><br>
+      </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const articleId = localStorage.getItem('readArticle')
+      let data;
+      axios.get(`https://my-brand-api.onrender.com/api/articles/${articleId}`)
+        .then(function (response) {
+          data = response.data;
+          document.getElementById('image').src = data.imageUrl
+          document.getElementById('title').innerHTML = data.title
+          document.getElementById('postedDate').innerHTML = data.postedDate
+          document.getElementById('desc').innerHTML = data.content
+
+          document.getElementById('likes').innerHTML = data.likes.length
+          document.getElementById('commentNumber').innerHTML = data.comments.length
+          const container = document.getElementById("commentsContainer");
+          const commments = data.comments || []
+          console.table(commments)
+          commments.forEach(element => {
+            container.innerHTML += `
+            <div class="comment-item">
+              <div>
+          <img src="images/bi_person-circle.png" alt="" />
+              </div>
+          <div class="comment-content">
+            <h3>${element.username}</h3>
+            <div class="date">${element.postedDate}</div>
+            <p>
+              ${element.comment}
+            </p>
+          </div>
+        </div><br>`;
+          })
+
+        }
+        )
+      const loginedUser = JSON.parse(localStorage.getItem("loginedUser")) || [];
+      if (loginedUser.role) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("logout").style.display = "block";
+        document.getElementById('username').innerHTML = loginedUser.username
+
+      }
+      const logout = () => {
+        localStorage.removeItem("loginedUser");
+        location.reload();
+      };
+      const user = JSON.parse(localStorage.getItem('loginedUser'))
+
+      const comment = e => {
+        e.preventDefault()
+        if (!user) {
+          alert('Please Login First!')
+          return false
+        }
+        const { username, email } = JSON.parse(localStorage.getItem("loginedUser"));
+        const message = document.getElementById('message').value;
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", `Bearer ${user.token}`);
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+          "article_id": articleId,
+          "comment": message
+        });
+
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+
+        fetch(`https://my-brand-api.onrender.com/api/articles/${articleId}/comment`, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            console.log(result)
+            location.reload()
+          })
+          .catch(error => console.log('error', error));
+
+      }
+      document.getElementById('commentForm').addEventListener('submit', comment)
+
+      // get all article comments 
+      console.table(data)
+      const getComments = () => {
+        const container = document.getElementById("commentsContainer");
+        const commments = data.comments || []
+        console.table(commments)
+        commments.forEach(element => {
+          container.innerHTML += `<div class="comment-item">
+          <img src="images/bi_person-circle.png" alt="" />
+          <div class="comment-content">
+            <h5>${element.username}</h5>
+            <div class="date">${element.postedDate}</div>
+            <p>
+              ${element.comment}
+            </p>
+          </div>
+        </div>`;
+        });
+        document.getElementById('commentNumber').innerHTML = commments.length > 1 ? `${commments.length} Comments` : `${commments.length} Comment`
+        document.getElementById('commentIcon').innerHTML = commments.length
+        getComments();
+      }
+      
+
+      const likeArticle = async () => {
+        if (!user) {
+          alert('Please Login First!')
+          return false
+        }
+        console.log(user);
+        var myHeaders = new Headers();
+        myHeaders.append("Authorization", `Bearer ${user.token}`);
+        myHeaders.append("Content-Type", "application/json");
+
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          redirect: 'follow'
+        };
+
+
+        fetch(`https://my-brand-api.onrender.com/api/articles/${articleId}/like`, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            console.log(result);
+            location.reload()
+          })
+          .catch(error => console.log('error', error));
+
+
+        // let headersList = {
+        //   "Accept": "*/*",
+        //   "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJfaWQiOiI2M2NkMTgzZGZhNTdmMjA0M2E2MjI1OTUiLCJ1c2VybmFtZSI6Impvc2VwaCIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkMFNiRGZKLlpCa2xzRjVpWDFLZlBTT09OQVI5NFBpTTNtN3oxSHNORzJVYWtRc3kwb3QzUmkiLCJyb2xlIjoidmlzdG9yIiwiX192IjowfSwiaWF0IjoxNjc0MzkxMDI1LCJleHAiOjE2NzY5ODMwMjV9.oESrw6a0ieVT9-sMLjodAh08Bh723TM9j-YsvRLGMro"
+        // }
+
+        // let reqOptions = {
+        //   url: "https://my-brand-api.onrender.com/api/articles/63bf0caaff610b1b94128c0e/like",
+        //   method: "POST",
+        //   headers: headersList,
+        // }
+
+        // let response = await axios.request(reqOptions);
+        // console.log(response.data);
+
+
+      }
+    </script>
 </body>
 
 </html>

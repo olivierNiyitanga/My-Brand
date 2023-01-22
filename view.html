@@ -119,13 +119,13 @@
             }
         }
 
-        @media (max-width:1115px) {
-            label.out {
-                font-weight: bold;
-                font-size: 20px;
-                line-height: 65px;
-                margin-left: 35rem;
-            }
+        @media (max-width:1115px){
+label.out{
+font-weight: bold;
+font-size: 20px;
+line-height: 65px;
+margin-left: 20rem;
+}
         }
     </style>
 
@@ -133,7 +133,7 @@
     <header>
         <nav>
             <label class="brand">K.Festo</label>
-            <label class="out"><a href="index.html">LOGOUT</a></label>
+            <label class="out"><a href="#" id="logoutBtn">LOGOUT</a></label>
         </nav>
         <div class="aside">
             <h3 id="dash"><a href="dashBoard.html"><br>
@@ -155,7 +155,7 @@
         </div>
 
 
-
+        <script src="./logout.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
             //   axios.get('https://my-brand-api.onrender.com/api/post/')
@@ -170,6 +170,7 @@
 
 
 
+            // axios.get('https://my-brand-api.onrender.com/api/articles/')
             axios.get('https://my-brand-api.onrender.com/api/articles/')
                 .then(function (response) {
                     let data = response.data;
@@ -178,7 +179,7 @@
                         //   div.innerHTML = `title: ${info.title} content: ${info.content} 
                         //   <img src="${info.imageUrl}" style="width:300px;height:400px;margin-top:-6cm;">
                         //   ${info.imageUrl}`;
-                        div.innerHTML = `<div class="blogItem">
+                        div.innerHTML = `<div class="blogItem" style="background-color:white; width:320px">
                         <div><p><img src="${info.imageUrl}" style="width:300px;height:300px;"></p>
                         <div style="">
                         <p style="color:black;font-weight:bold;font-size:20px; text-align:center;">${info.title}</p><hr>
