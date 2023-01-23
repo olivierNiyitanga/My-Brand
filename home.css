@@ -248,6 +248,9 @@ border-radius: 10px;
 .likes{
     padding-right: 50px;
 }
+.submit-btn{
+    margin-left: 17rem;
+}
 @media(max-width:400px){
     .taggle-botton{
         display: flex;
