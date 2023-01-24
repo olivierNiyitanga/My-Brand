@@ -220,7 +220,7 @@ margin-left: 20rem;
                     event.preventDefault();
 
                     const title = document.getElementById("title").value;
-                    const content = document.getElementById("body").value;
+                    const content = document.getElementById("bozdy").value;
                     const tag = document.getElementById("tag").value;
 
                     var myHeaders = new Headers();
@@ -231,7 +231,7 @@ margin-left: 20rem;
                         "title": title,
                         "content": content
                     });
-
+                    
                     var requestOptions = {
                         method: 'PUT',
                         headers: myHeaders,
@@ -290,7 +290,7 @@ margin-left: 20rem;
                             console.log(result)
                             window.open("view.html", "_self");
                         })
-                        .catch(error => console.log('error', error));;
+                        .catch(error => console.log('error', error));
                 });
         }
     </script>

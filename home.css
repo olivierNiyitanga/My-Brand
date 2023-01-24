@@ -61,14 +61,13 @@ margin: auto;
     margin-top: 4cm;
 }
 input[type=button]{
-    height:70px;
-    width:150px;
-    border-radius:34.4px;
+    height:40px;
+    width:100px;
     background-color: white;
 }
 input[type=button]:hover{
-    height:50px;
-    width:150px;
+    height:40px;
+    width:105px;
     background-color:green;
 }
 .board{
