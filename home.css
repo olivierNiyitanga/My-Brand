@@ -12,42 +12,93 @@ body{
     font-family: montserrat;
     background-color: #103440;
 }
-header{
-    display: inline;
-    width: 90%;
-    margin: auto;
-    align-items: center;
-}
-nav{
+.menus{
     background-color:white;
-    width: 100%;
-    border-radius: 10px;
+    display: flex;
     position: fixed;
+    width: 100%;
+}
+.menus ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    margin-left: 44rem;
+}
+@media only screen and (max-width: 1500px) {
+    .menus{
+        display: flex;
+        width: 100%;
+        background-color:white;
+    }
+    .menus ul {
+      display: flex;
+      margin-left:12rem;
+    }
+    .menus li{
+        list-style-type: none;
+    }
+    .menus a{
+        display: inline-block;
+        font-size: 1rem;
+        text-align: center;
+        padding: 2px;
+        margin: 1rem;
+        text-decoration: none;
+        color: black;
+    }
+    label.brand{
+        font-weight: bold;
+        font-size: 2px;
+        display: none;
+        }
+}
+  @media only screen and (max-width: 500px) {
+    .menus{
+        display: flex;
+        width: 100%;
+        background-color:white;
+    }
+    .menus ul {
+      display: flex;
+      margin-left: 0px;
+    }
+    .menus li{
+        list-style-type: none;
+    }
+    .menus a{
+        display: inline-block;
+        font-size: 10px;
+        text-align: center;
+        padding: 2px;
+        margin: -0.7rem;
+        text-decoration: none;
+        color: black;
+    }
+    label.brand{
+        font-weight: bold;
+        font-size: 2px;
+        display: none;
+        }
+  }
+.menus li{
+    font-size: 22px;
+    list-style-type: none;
+}
+.menus a{
+    display: inline-block;
+    padding: 25px;
+    margin: 10 60px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
 }
 label.brand{
 font-weight: bold;
 font-size: 22px;
-margin-top: -2cm;
-margin-left: 2cm;
-display: inline;
-}
-nav ul{
-    float: right;
-    margin-right: 100px;
-    flex-direction: column;
-
-}
-nav ul li{
-    display: inline;
-    line-height: 65px;
-    margin: 0 15px;
-    font-size: 22px;
-}
-nav ul li a{
-    color: black;
+margin-left: 2em;
 }
 #img{
-    margin-top: 2cm;
+    margin-top: 6em
 }
 #home-Body{
     display: flex;
@@ -58,22 +109,24 @@ margin: auto;
 }
 #pra{
     color: white;
-    margin-top: 4cm;
+    margin-top: 7rem;
 }
 input[type=button]{
     height:40px;
     width:100px;
     background-color: white;
+    
 }
-input[type=button]:hover{
+input[type=button]:active{
     height:40px;
     width:105px;
     background-color:green;
 }
 .board{
     background-color:white;
-    height: 150px;
+    height: 5em;
     width: 100%;
+    text-align: center;
     
 }
 .board div{
@@ -116,16 +169,16 @@ input[type=button]:hover{
 }
 #pra1{
     background-color:darkgrey;
-    height: 50px;
-    width: 180px;
+    height: 8.33%;
+    width: 35%;
     font-weight: bold;
     text-align: center;
     border: 2px solid darkslategrey;
 }
 #pra2{
     background-color:darkgrey;
-    height: 50px;
-    width: 180px;
+    height: 8.33%;
+    width: 35%;
     font-weight: bold;
     text-align: center;
     border: 2px solid darkslategrey;
@@ -148,7 +201,7 @@ input[type=button]:hover{
 
 .progress{
     height: 10px;
-    width:13cm;
+    width:30em;
     background-color: white;
     border-radius: 10px;
 }
@@ -197,9 +250,8 @@ span{
     margin: auto;
 }
 input[type=text]{
-    height:50px;
-    width:294px;
-    border-radius:34.4px;
+    width:50em;
+    height: 6vh;
     background-color: white;
     text-align: center;
 }
@@ -211,9 +263,9 @@ input[type=text]{
 #porto{
     display: flex;
     flex-wrap: wrap;
-}
-#porto div{
-    margin: auto;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 0 5px;
 }
 #protfolio{
     text-align: center;
@@ -227,22 +279,6 @@ input[type=text]{
 #blogContainer .blogItem {
     margin: 2rem;
     padding-left: -10%;
-}
-.taggle-botton{
-   position: absolute;
-   top: .75rem;
-   right: 1rem;
-   display: none;
-   flex-direction: column;
-   justify-content: space-between;
-   width: 30px;
-   height: 21px; 
-}
-.taggle-botton .bar{
-height: 3px;
-width: 100%;
-background-color: white;
-border-radius: 10px;
 }
 .likes{
     padding-right: 50px;

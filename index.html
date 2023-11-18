@@ -5,72 +5,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>homePage</title>
     <link rel="stylesheet" type="text/css" href="home.css">
 </head>
-
 <body>
     <header>
-        <nav>
-            <label class="brand"><img src="picture/pall.webp" style="height: 60px;width:60px;"></label>
-            <a href="#" class="taggle-botton">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </a>
+        <nav class="menus">
+            <label class="brand"><img src="picture/pall.webp" style="height: 4rem;width:4rem;"></label>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skill" id="skillTab">Skills</a></li>
                 <li><a href="#protfolio">Protfolio</a></li>
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#cont">Contact</a></li>
                 <li><a href="login.html" class="sign">Sign-In</a></li>
             </ul>
         </nav>
+    </header>
+        <section id="body-section">
         <div id="home-Body">
             <div class="first">
                 <h2 id="pra">
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;I’m a Software Developer</p>
-                    <p>&nbsp;&nbsp;&nbsp;
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KABANO U. Festo</p><br><br>
-                    <p>I am trainee in Andela and I'm </p>
-                    <p>professional programmer that's why </p>
-                    <p>am Postioned myself in Software </p>
-                    <p>developer as career. As we known IT is</p>
-                    <p>foundation of Human life.</p>
-                </h2><br><br><br>
-                <br><br>
-                <input type="button" value="HIRE ME">
-                <input type="button" value="LEARN MORE">
+                    
+                    <p style="text-align: center;">KABANO U. Festo <br>I’m a Software Developer
+                    <br><br></p><p>
+                       I was trained in Andela and I'm professional<br>
+                        programmer that's why  am Postioned<br>
+                        myself in Software developer, <br>
+                        as career. As we known IT is<br>
+                       foundation of Human life !!!</p>
+                       <br>
+                       <p style="text-align: center;">
+                <input type="button" value="HIRE ME" onclick="handle()">
+                <input type="button" value="LEARN MORE" onclick="handle2()">
+                       </p>
+                </h2>
             </div>
             <div>
-                <img src="picture/f.jpg" id="img" style="height:670px; max-width:445px;">
+                <img src="picture/f.jpg" id="img" style="height:40em; width:25em;">
             </div>
-        </div><br><br><br><br><br><br>
+        </div>
+    </section>
+        <br><br><br><br><br><br>
         <center>
             <div class="copyRight"><br>
                 <p>“Coding is My Passion!!!”</p>
                 <p>“Means with coding ,I can do whatever you want :Just DM me”</p>
             </div>
         </center><br><br><br><br>
+        <section id="about-section">
         <div id="about">
             <br><br>
             <div>
-                <img src="picture/about.webp" style="height:445px; width:576px;margin-top: 6cm;">
-            </div><br><br><br><br><br>
+                <img src="picture/about.webp" style="height:30rem; width:36rem;margin-top:15em;">
+            </div>
             <div id="sbody">
-
 
                 <h2 class="skillPra"><br>
                     <p id="pra1">About
-                    <p>&nbsp;&nbsp;&nbsp;
-                    <p>SKILLS&nbsp;&nbsp;&nbsp;EXPERIENCE</p>
+                    </p>&nbsp;&nbsp;&nbsp;
+                    <p>Skills&nbsp;&nbsp;&nbsp;Experience</p>
                     <br>
                 </h2>
-                <p style="text-align: center;font-size: 30px;font-weight: bold;"><b>My Story</b></p>
+                <p style="text-align: center;font-size: 1.8rem;font-weight: bold;"><b>My Story</b></p>
                 <br><br><br><br><br><br><br>
-                <h2 style="margin-left: 1cm;">
+                <h2 style="margin-left: 1em;">
                     <p>Hello my name is KABANO Festo, I love solving</p>
                     <p>complex problems using my skills in programming.</p>
                     <p>I have been in this industry since 2018 and have</p>
@@ -81,19 +81,20 @@
                 </h2>
             </div>
         </div>
+    </section>
         <br><br><br>
         <div id="skill"><br><br>
             <div>
-                <img src="picture/about.webp" style="height:445px; width:576px;margin-top: 6cm;">
+                <img src="picture/about.webp" style="height:30rem; width:36rem;margin-top:15em;">
             </div>
             <br><br><br><br><br>
             <div id="mbody">
                 <h2 class="skillPr"><br>
                     <p id="pra2">Skills</p>&nbsp;&nbsp;&nbsp;
-                    <p>About&nbsp;&nbsp;&nbsp;EXPERIENCE</p>
+                    <p>About&nbsp;&nbsp;&nbsp;Experience</p>
                     <br>
                 </h2>
-                <p style="text-align: center;font-size: 30px;font-weight: bold;"><b>My Story</b></p>
+                <p style="text-align: center;font-size: 1.8rem;font-weight: bold;"><b>My Story</b></p>
                 <br><br><br><br><br><br><br>
                 <div id="progressing">
                     <p><b><span>HTML 90%</span></b></p>
@@ -124,19 +125,22 @@
         </div>
         <br><br><br>
         <div id="porto">
-            <div>
-                <img src="picture/graphic.jpg"
-                    style="height:375px;width:550px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
-                    src="picture/graphic.jpg" style="height:375px;width:550px;">
-            </div>
-            <div>
-                <img src="picture/graphic.jpg"
-                    style="height:375px;width:550px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
-                    src="picture/graphic.jpg" style="height:375px;width:550px;">
-            </div>
+                <div>
+                <img src="picture/martin-marek-jDqwzyP3MlA-unsplash.jpg" style="height:34em;width:30em;">
+                 </div>
+                <img src="picture/altumcode-U0tBTn8UR8I-unsplash.jpg" style="height:34em;width:30em;">
+
+                <img src="picture/gema-saputera-pJaocJrXGFQ-unsplash.jpg" style="height:34em;width:30em;">
+
+                <img src="picture/goran-ivos-TorAcb4AQRc-unsplash.jpg" style="height:34em;width:30em;">
         </div>
         <br><br> <br><br><br><br> <br><br>
+        <center>
+            <h3 style="text-align: center;color: white;" id="cont">Contact us</h3>
+        </center>
+        <br><br> <br><br><br><br> <br><br>
         <div id="contact">
+           
             <div style="text-align: center;">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2041615.457967874!2d28.758936088748808!3d-1.940537681807052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c29654e73840e3%3A0x7490b026cbcca103!2sRwanda!5e0!3m2!1sen!2srw!4v1670468147460!5m2!1sen!2srw"
@@ -144,7 +148,7 @@
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div>
-                <div style="color:white;">
+                <div style="color:white;text-align: center;">
                     <p style="text-align: center;"><b>CONTACT</b></p>
                     <br>
                     <p style="text-align: center;">we are open for any suggetion and also you can chat with me</p>
@@ -156,15 +160,15 @@
                     <p>KIGALI,RWANDA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kabanofesto1@gmail.com
                         &nbsp;&nbsp;&nbsp;&nbsp;+250785206973</p><br>
                         <form action="" id="messageForm">
-                    <p><input type="text" name="fname" placeholder="Name" id="username">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input type="text" name="email" placeholder="Email" id="email">
+                    <p><input type="text" name="fname" placeholder="Write your name!" id="username" required>
+                        <br><br>
+                        <input type="text" name="email" placeholder="Write your Email!" id="email" required>
                     </p>
                     <br>
                     <p>
                         <textarea type="text" placeholder="write article's title" rows="5" id="mess" name="message"
                             required></textarea>
-                            <input type="submit" class="submit-btn" value="SEND MESSAGE" />
+                            <input type="submit" class="submit-btn" value="SEND MESSAGE" style="margin-left: -1em;"/>
                     </p>
                     </form>
                     <br><br>
@@ -186,32 +190,15 @@
             </div>
         </div>
         </div>
-        <div class="board">
-            <div style="text-align: right;margin-left: 5rem;">
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>K.Festo</b></p>
+        <footer>
+            <div class="board">
+                <h2 style="text-align: center;width: 100%;">
+                <p><b>Copy Right©2022 KABANO Festo</b></p> 
+            </h2>
             </div>
-            <div style="text-align: right;margin-left: 10rem;">
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Copy Right©2022 KABANO Festo</b></p>
-            </div>
-            <div style="text-align: right;margin-left: 15rem;">
-                <p><b>Have a Question??</b></p>
-            </div>
-        </div>
-    </header>
+        </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
-        //   axios.get('https://my-brand-api.onrender.com/api/post/')
-        //     .then(function (response) {
-        //       //document.getElementById("content").innerHTML = response.data;
-        //       console.log(response.data);
-        //     //   document.getElementById("blogContainer").innerHTML = response.data;
-        //     })
-        //     .catch(function (error) {
-        //       console.log(error);
-        //     });
-
-
-
         axios.get('https://my-brand-api.onrender.com/api/articles/')
             .then(function (response) {
                 let data = response.data;
@@ -277,6 +264,7 @@
     }
     document.getElementById('messageForm').addEventListener('submit', sendMessage)
     </script>
+    <script src="./manipulation.js"></script>
 </body>
 
 </html>
