@@ -98,7 +98,7 @@ font-size: 22px;
 margin-left: 2em;
 }
 #img{
-    margin-top: 6em
+    margin-top: 5.5em
 }
 #home-Body{
     display: flex;
@@ -137,7 +137,7 @@ input[type=button]:active{
 }
 .copyRight{
     background-color:white;
-    height:124px;
+    height:4em;
     max-width: 100%;
     border-radius:6px;
     font-size: 24px;
@@ -161,6 +161,8 @@ input[type=button]:active{
     color: white;
     font-weight: bold;
     display: flex;
+    margin-left: 2.5em;
+    margin-top: 2em;
 }
 .skillPr{
     color: white;
@@ -247,7 +249,9 @@ span{
     flex-wrap: wrap;
 }
 #contact div{
-    margin: auto;
+    justify-content: space-between;
+    padding: 30px;
+    margin:0 20px;
 }
 input[type=text]{
     width:50em;
@@ -264,8 +268,8 @@ input[type=text]{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 5px;
-    margin: 0 5px;
+    padding: 2px;
+    margin: 0 22px;
 }
 #protfolio{
     text-align: center;
