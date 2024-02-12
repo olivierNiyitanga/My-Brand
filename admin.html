@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin-pannel</title>
     <style>
-           * {
+        * {
             padding: 0;
             margin: 0;
             text-decoration: none;
@@ -20,9 +20,10 @@
             height: 63px;
             width: 100%;
             display: flex;
-            justify-content:space-around;
+            justify-content: space-around;
         }
-        nav label{
+
+        nav label {
             font-weight: bold;
             font-size: 22px;
             display: inline;
@@ -127,13 +128,13 @@
             }
         }
 
-        @media (max-width:1115px){
-label.out{
-font-weight: bold;
-font-size: 20px;
-line-height: 65px;
-margin-left: 20rem;
-}
+        @media (max-width:1115px) {
+            label.out {
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 65px;
+                margin-left: 20rem;
+            }
         }
     </style>
 </head>
@@ -231,7 +232,7 @@ margin-left: 20rem;
                         "title": title,
                         "content": content
                     });
-                    
+
                     var requestOptions = {
                         method: 'PUT',
                         headers: myHeaders,

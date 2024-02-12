@@ -7,53 +7,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>homePage</title>
     <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
+
 <body>
     <header>
-        <nav class="menus">
-            <label class="brand"><img src="picture/pall.webp" style="height: 4rem;width:4rem;"></label>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about-section" onclick="hidePage('about-section')">About</a></li>
-                <li><a href="#skill-section" onclick="hidePage('skill-section')">Skills</a></li>
-                <li><a href="#protfolio">Protfolio</a></li>
-                <li><a href="#cont">Contact</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="login.html" class="sign">Sign-In</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="content">
+                <div class="logo">
+                    <a href="index.html">K.FESTO</a>
+                </div>
+                <ul class="menu-list">
+                    <div class="icon cancel-btn">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <li><a href="#about-section" onclick="hidePage('about-section')">About</a></li>
+                    <li><a href="#skill-section" onclick="hidePage('skill-section')">Experience</a></li>
+                    <li><a href="#skill-section">Work</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
+                    <li><a href="login.html" class="sign"><i class="bi bi-person-fill"></i>Sign-In</a></li>
+                </ul>
+                <div class="icon menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
         </nav>
     </header>
-        <section id="body-section">
+    <section id="body-section">
         <div id="home-Body">
             <div class="first">
                 <h2 id="pra">
-                    
+
                     <p style="text-align: center;">KABANO U. Festo <br>I’m a Software Developer
-                    <br><br></p><p>
-                       I was trained in Andela and I'm professional<br>
-                        programmer that's why  am Postioned<br>
+                        <br><br>
+                    </p>
+                    <p>
+                        I was trained in Andela and I'm professional<br>
+                        programmer that's why am Postioned<br>
                         myself in Software developer, <br>
                         as career. As we known IT is<br>
-                       foundation of Human life !!!</p>
-                       <br>
-                       <p style="text-align: center;">
-                <input type="button" value="HIRE ME" onclick="handle()">
-                <input type="button" value="LEARN MORE" onclick="handle2()">
-                       </p>
+                        foundation of Human life !!!</p>
+                    <br>
+                    <p style="text-align: center;">
+                        <input type="button" value="HIRE ME" onclick="handle()">
+                        <input type="button" value="LEARN MORE" onclick="handle2()">
+                    </p>
                 </h2>
             </div>
             <div>
-                <img src="picture/f.jpg" id="img" style="height:40em; width:25em;">
+                <img src="picture/f.jpg" id="img" style="height:40em; width:25em;border-radius: 20%;">
             </div>
         </div>
     </section>
-        <center>
-            <div class="copyRight"><br>
-                <p>“Coding is My Passion!!!”</p>
-                <p>“Means with coding ,I can do whatever you want :Just DM me”</p>
-            </div>
-        </center><br><br><br><br>
-        <section id="about-section">
+    <center>
+        <div class="copyRight"><br>
+            <p>“Coding is My Passion!!!”</p>
+            <p>“Means with coding ,I can do whatever you want :Just DM me”</p>
+        </div>
+    </center><br><br><br><br>
+    <section id="about-section">
         <div id="about">
             <br><br>
             <div>
@@ -64,7 +77,8 @@
                 <h2 class="skillPra"><br>
                     <p id="pra1">About
                     </p>&nbsp;&nbsp;&nbsp;
-                    <p style="text-decoration: none;list-style: none;"><a href="#skill-section" style="color: white;">Skills</a>&nbsp;&nbsp;&nbsp;Experience</p>
+                    <p style="text-decoration: none;list-style: none;"><a href="#skill-section"
+                            style="color: white;">Skills</a>&nbsp;&nbsp;&nbsp;Experience</p>
                     <br>
                 </h2>
                 <p style="text-align: center;font-size: 1.8rem;font-weight: bold;"><b>My Story</b></p>
@@ -81,8 +95,8 @@
             </div>
         </div>
     </section>
-        <br><br><br>
-        <section id="skill-section" style="display: none;">
+    <br><br><br>
+    <section id="skill-section" style="display: none;">
         <div id="skill"><br><br>
             <div>
                 <img src="picture/about.webp" style="height:30rem; width:36rem;margin-top:15em;margin-left:-2em;">
@@ -90,7 +104,8 @@
             <br><br>
             <div id="mbody">
                 <h2 class="skillPr"><br>
-                    <p style="text-decoration: none;list-style: none;"><a href="#about-section" style="color: white;">About</a></p>&nbsp;&nbsp;&nbsp;
+                    <p style="text-decoration: none;list-style: none;"><a href="#about-section"
+                            style="color: white;">About</a></p>&nbsp;&nbsp;&nbsp;
                     <p id="pra2">Skills</p>&nbsp;&nbsp;&nbsp;Experience</p>
                     <br>
                 </h2>
@@ -116,49 +131,49 @@
                 </div>
             </div>
         </div>
-        </section>
-        <br><br><br><br><br><br><br><br><br>
-        <div id="protfolio">
-            <h2 style="color: white;">
-                <p>PORTFOLIO</p>
-                <p>My Latest Work</p>
-            </h2>
+    </section>
+    <br><br><br><br><br><br><br><br><br>
+    <div id="protfolio">
+        <h2 style="color: white;">
+            <p>PORTFOLIO</p>
+            <p>My Latest Work</p>
+        </h2>
+    </div>
+    <br><br><br>
+    <div id="porto">
+        <div>
+            <img src="picture/martin-marek-jDqwzyP3MlA-unsplash.jpg" style="height:34em;width:25em;">
         </div>
-        <br><br><br>
-        <div id="porto">
-                <div>
-                <img src="picture/martin-marek-jDqwzyP3MlA-unsplash.jpg" style="height:34em;width:25em;">
-                 </div>
-                <img src="picture/altumcode-U0tBTn8UR8I-unsplash.jpg" style="height:34em;width:25em;">
+        <img src="picture/altumcode-U0tBTn8UR8I-unsplash.jpg" style="height:34em;width:25em;">
 
-                <img src="picture/gema-saputera-pJaocJrXGFQ-unsplash.jpg" style="height:34em;width:25em;">
+        <img src="picture/gema-saputera-pJaocJrXGFQ-unsplash.jpg" style="height:34em;width:25em;">
+    </div>
+    <br><br> <br><br><br><br> <br><br><br><br>
+    <center>
+        <h3 style="text-align: center;color: white;" id="cont">Contact us</h3>
+    </center>
+    <br><br> <br><br><br><br> <br><br>
+    <div id="contact">
+
+        <div style="text-align: center;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2041615.457967874!2d28.758936088748808!3d-1.940537681807052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c29654e73840e3%3A0x7490b026cbcca103!2sRwanda!5e0!3m2!1sen!2srw!4v1670468147460!5m2!1sen!2srw"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <br><br> <br><br><br><br> <br><br><br><br>
-        <center>
-            <h3 style="text-align: center;color: white;" id="cont">Contact us</h3>
-        </center>
-        <br><br> <br><br><br><br> <br><br>
-        <div id="contact">
-           
-            <div style="text-align: center;">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2041615.457967874!2d28.758936088748808!3d-1.940537681807052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19c29654e73840e3%3A0x7490b026cbcca103!2sRwanda!5e0!3m2!1sen!2srw!4v1670468147460!5m2!1sen!2srw"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div>
-                <div style="color:white;text-align: center;">
-                    <p style="text-align: center;"><b>CONTACT</b></p>
-                    <br>
-                    <p style="text-align: center;">we are open for any suggetion and also you can chat with me</p>
-                    <br><br><br>
-                    <p><b>MY ADDRESS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY EMAIL:
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY CONTACT:</b></p>
-                    <br>
-                    <p>KIGALI,RWANDA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kabanofesto1@gmail.com
-                        &nbsp;&nbsp;&nbsp;&nbsp;+250785206973</p><br>
-                        <form action="" id="messageForm">
+        <div>
+            <div style="color:white;text-align: center;">
+                <p style="text-align: center;"><b>CONTACT</b></p>
+                <br>
+                <p style="text-align: center;">we are open for any suggetion and also you can chat with me</p>
+                <br><br><br>
+                <p><b>MY ADDRESS:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY EMAIL:
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MY CONTACT:</b></p>
+                <br>
+                <p>KIGALI,RWANDA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kabanofesto1@gmail.com
+                    &nbsp;&nbsp;&nbsp;&nbsp;+250785206973</p><br>
+                <form action="" id="messageForm">
                     <p><input type="text" name="fname" placeholder="Write your name!" id="username" required>
                         <br><br>
                         <input type="text" name="email" placeholder="Write your Email!" id="email" required>
@@ -167,35 +182,35 @@
                     <p>
                         <textarea type="text" placeholder="write article's title" rows="5" id="mess" name="message"
                             required></textarea>
-                            <input type="submit" class="submit-btn" value="SEND MESSAGE" style="margin-left: -1em;"/>
+                        <input type="submit" class="submit-btn" value="SEND MESSAGE" style="margin-left: -1em;" />
                     </p>
-                    </form>
-                    <br><br>
-                    <p style="text-align: center;">Follow me to the social Media:</p>
-                    <p style="text-align: center;"><img src="picture/Instagram.webp"
-                            style="height:30px;width:30px;">&nbsp;&nbsp;&nbsp;&nbsp;
-                        <img src="picture/facebook.png" style="height:30px;width:30px;">&nbsp;&nbsp;&nbsp;&nbsp;
-                        </p>
-                         </div>
+                </form>
+                <br><br>
+                <p style="text-align: center;">Follow me to the social Media:</p>
+                <p style="text-align: center;"><img src="picture/Instagram.webp"
+                        style="height:30px;width:30px;">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="picture/facebook.png" style="height:30px;width:30px;">&nbsp;&nbsp;&nbsp;&nbsp;
+                </p>
             </div>
-        </div><br><br><br><br><br><br>
-        <div id="blog">
-            <h3 style="color: white;text-align: center;font-weight: bold;">
-                <p>Our blog</p>
-                <p>Recent From Blog</p><br><br><br>
-            </h3>
-            <div id="blogContainer">
+        </div>
+    </div><br><br><br><br><br><br>
+    <div id="blog">
+        <h3 style="color: white;text-align: center;font-weight: bold;">
+            <p>Our blog</p>
+            <p>Recent From Blog</p><br><br><br>
+        </h3>
+        <div id="blogContainer">
 
-            </div>
         </div>
-        </div>
-        <footer>
-            <div class="board">
-                <h2 style="text-align: center;width: 100%;">
-                <p><b>Copy Right©2022 KABANO Festo</b></p> 
+    </div>
+    </div>
+    <footer>
+        <div class="board">
+            <h2 style="text-align: center;width: 100%;">
+                <p><b>Copy Right©2022 KABANO Festo</b></p>
             </h2>
-            </div>
-        </footer>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         axios.get('https://my-brand-api.onrender.com/api/articles/')
@@ -228,42 +243,43 @@
             localStorage.setItem('readArticle', id)
         }
         const sendMessage = e => {
-      e.preventDefault()
+            e.preventDefault()
 
-      const username = document.getElementById('username').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('mess').value;
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('mess').value;
 
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
 
-      var raw = JSON.stringify({
-        "name": username,
-        "email": email,
-        "message": message
-      });
+            var raw = JSON.stringify({
+                "name": username,
+                "email": email,
+                "message": message
+            });
 
-      var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-      };
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
 
-      fetch("https://my-brand-api.onrender.com/api/message/sendMessage/", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-          console.log(result)
-          alert("Thank you for Your Message")
-          document.getElementById('messageForm').reset()
-        })
-        .catch(error => console.log('error', error));
+            fetch("https://my-brand-api.onrender.com/api/message/sendMessage/", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
+                    alert("Thank you for Your Message")
+                    document.getElementById('messageForm').reset()
+                })
+                .catch(error => console.log('error', error));
 
 
-    }
-    document.getElementById('messageForm').addEventListener('submit', sendMessage)
+        }
+        document.getElementById('messageForm').addEventListener('submit', sendMessage)
     </script>
     <script src="./manipulation.js"></script>
+    <script src="./js/menus.js"></script>
 </body>
 
 </html>
