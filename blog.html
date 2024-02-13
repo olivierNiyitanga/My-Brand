@@ -6,13 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="blog.css">
+  <link rel="stylesheet" type="text/css" href="./home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <style>
-    #commentNumber{
+    #commentNumber {
       margin-left: 12.5rem;
       margin-top: -2rem;
     }
-    #likes{
+
+    #likes {
       margin-top: -1.9rem;
       margin-left: 19.5rem;
     }
@@ -20,19 +23,29 @@
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skill" id="skillTab">Skills</a></li>
-      <li><a href="#protfolio">Protfolio</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="login.html" class="sign" id="login">Sign-In</a></li>
-      <li><a href="#" class="signout" id="logout" onclick="logout()">Logout</a></li>
-      <li><a href="#"> <span id="username"></span></a></li>
-    </ul>
-  </nav><br>
+  <header>
+    <nav class="navbar">
+      <div class="content">
+        <div class="logo">
+          <a href="index.html">K.FESTO</a>
+        </div>
+        <ul class="menu-list">
+          <div class="icon cancel-btn">
+            <i class="fas fa-times"></i>
+          </div>
+          <li><a href="#about-section" onclick="hidePage('about-section')">About</a></li>
+          <li><a href="#skill-section" onclick="hidePage('skill-section')">Experience</a></li>
+          <li><a href="#protfolio">Work</a></li>
+          <li><a href="#cont">Contact</a></li>
+          <li><a href="#blog">Certificates</a></li>
+          <li><a href="login.html" class="sign"><i class="bi bi-person-fill"></i>Sign-In</a></li>
+        </ul>
+        <div class="icon menu-btn">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+  </header><br /><br /><br /><br />
   <div class="items">
     <div id="imageBlog" style="text-align: center;">
       <img src="./images/me.png" id="image">
@@ -40,8 +53,10 @@
   </div>
   <div style="background-color: white;">
     <div>
-    <h3 style="width: 700px;margin-left: 10rem;font-family: 'Times New Roman', Times, serif;" id="title">My journey in Andela</h3>
-    <h3 style="margin-left: 64rem;margin-top: -1.3rem;font-family: 'Times New Roman', Times, serif;" id="postedDate">My journey in Andela</h3>
+      <h3 style="width: 700px;margin-left: 10rem;font-family: 'Times New Roman', Times, serif;" id="title">My journey in
+        Andela</h3>
+      <h3 style="margin-left: 64rem;margin-top: -1.3rem;font-family: 'Times New Roman', Times, serif;" id="postedDate">
+        My journey in Andela</h3>
     </div>
     <br>
     <p style="margin-left: 10rem;font-family: 'Times New Roman', Times, serif;" id="desc">My journey in
@@ -50,8 +65,8 @@
       movies so don't complain main</p><br>
     <div style="display: flex;">
       <div class="likes">
-        <img src="picture/comm.png" style="height: 40px;width: 40px;margin-left: 13rem;">
-
+        <!-- <img src="picture/comm.png" style="height: 40px;width: 40px;margin-left: 13rem;"> -->
+        <i class="bi bi-chat-dots-fill"></i>
         <h3 id="commentNumber"></h3>
       </div>
       <div class="likes">
@@ -61,11 +76,15 @@
         </div>
       </div>
     </div>
-    <caption><h2 style="margin-left: 20rem;font-family: 'Times New Roman', Times, serif;">COMMENT(S)</h2></caption>
+    <caption>
+      <h2 style="margin-left: 20rem;font-family: 'Times New Roman', Times, serif;">COMMENT(S)</h2>
+    </caption>
     <br>
     <div id="commentsContainer"></div>
     <br>
-    <caption><h4 style="margin-left: 30rem;font-family: 'Times New Roman', Times, serif;">LEAVE WITH A COMMENT!!!</h3></caption>
+    <caption>
+      <h4 style="margin-left: 30rem;font-family: 'Times New Roman', Times, serif;">LEAVE WITH A COMMENT!!!</h3>
+    </caption>
     <form action="" id="commentForm">
       <div>
         <textarea style="margin-left: 10rem; width:60rem;font-family: 'Times New Roman', Times, serif;height: 12rem;"
@@ -181,7 +200,7 @@
         document.getElementById('commentIcon').innerHTML = commments.length
         getComments();
       }
-      
+
 
       const likeArticle = async () => {
         if (!user) {
@@ -208,24 +227,28 @@
           })
           .catch(error => console.log('error', error));
 
-
-        // let headersList = {
-        //   "Accept": "*/*",
-        //   "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJfaWQiOiI2M2NkMTgzZGZhNTdmMjA0M2E2MjI1OTUiLCJ1c2VybmFtZSI6Impvc2VwaCIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkMFNiRGZKLlpCa2xzRjVpWDFLZlBTT09OQVI5NFBpTTNtN3oxSHNORzJVYWtRc3kwb3QzUmkiLCJyb2xlIjoidmlzdG9yIiwiX192IjowfSwiaWF0IjoxNjc0MzkxMDI1LCJleHAiOjE2NzY5ODMwMjV9.oESrw6a0ieVT9-sMLjodAh08Bh723TM9j-YsvRLGMro"
-        // }
-
-        // let reqOptions = {
-        //   url: "https://my-brand-api.onrender.com/api/articles/63bf0caaff610b1b94128c0e/like",
-        //   method: "POST",
-        //   headers: headersList,
-        // }
-
-        // let response = await axios.request(reqOptions);
-        // console.log(response.data);
-
-
       }
     </script>
+       <script>
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = () => {
+            navbar.classList.add("show");
+            menuBtn.classList.add("hide");
+            body.classList.add("disabled");
+        }
+        cancelBtn.onclick = () => {
+            body.classList.remove("disabled");
+            navbar.classList.remove("show");
+            menuBtn.classList.remove("hide");
+        }
+        window.onscroll = () => {
+            this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+    </script>
+    <script src="./js/menus.js"></script>
 </body>
 
 </html>

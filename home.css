@@ -554,3 +554,14 @@ footer {
     font-size: 24px;
     font-weight: bold;
 }
+
+/* blogPost!!!! */
+
+.items {
+    margin-top: 2%;
+}
+
+.items img {
+    width: 40em;
+    height: 30em;
+}
