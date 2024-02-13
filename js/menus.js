@@ -15,3 +15,18 @@ cancelBtn.onclick = () => {
 window.onscroll = () => {
     this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
 }
+
+//menu hiding!!!!
+
+let lastScroll = 0;
+let navBar = document.querySelector('nav');
+window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScroll) {
+        navBar.style.top = "-100vh";
+    } else {
+        navBar.style.top = "0";
+    }
+    lastScroll = scrollTop;
+});
