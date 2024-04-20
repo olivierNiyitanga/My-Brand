@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin-pannel</title>
+    <title>dashboard-viewpage</title>
     <style>
         * {
             padding: 0;
@@ -151,27 +151,13 @@
         <script src="../js/logout.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script>
-            //   axios.get('https://my-brand-api.onrender.com/api/post/')
-            //     .then(function (response) {
-            //       //document.getElementById("content").innerHTML = response.data;
-            //       console.log(response.data);
-            //     //   document.getElementById("blogContainer").innerHTML = response.data;
-            //     })
-            //     .catch(function (error) {
-            //       console.log(error);
-            //     });
 
-
-
-            // axios.get('https://my-brand-api.onrender.com/api/articles/')
             axios.get('https://my-brand-api.onrender.com/api/articles/')
                 .then(function (response) {
                     let data = response.data;
                     data.forEach(function (info) {
                         let div = document.createElement("div");
-                        //   div.innerHTML = `title: ${info.title} content: ${info.content} 
-                        //   <img src="${info.imageUrl}" style="width:300px;height:400px;margin-top:-6cm;">
-                        //   ${info.imageUrl}`;
+                        
                         div.innerHTML = `<div class="blogItem" style="background-color:white; width:320px">
                         <div><p><img src="${info.imageUrl}" style="width:300px;height:300px;"></p>
                         <div style="">
