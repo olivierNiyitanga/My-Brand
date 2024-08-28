@@ -249,13 +249,12 @@ label.brand2 {
     height: 35px;
 }
 
-#img {
-    margin-top: 5.8em
-}
-
 #home-Body {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
 }
 
 #home-Body div {
@@ -418,10 +417,11 @@ input[type=text] {
 
 #porto {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 2px;
-    margin: 0 22px;
+    margin: 0 120px;
 }
 
 #protfolio {
@@ -568,4 +568,9 @@ footer {
 .items img {
     width: 40em;
     height: 30em;
+}
+
+#img {
+    border-radius: 10%;
+    box-shadow: 12px 12px 2px 1px rgba(59, 59, 228, 0.2);
 }
