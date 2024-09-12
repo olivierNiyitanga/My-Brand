@@ -29,9 +29,9 @@ body {
 }
 
 .content {
-    max-width: 1250px;
+    max-width: 1340px;
     margin: auto;
-    padding: 0 30px;
+    /* padding: 0 30px; */
 }
 
 .content-about {
